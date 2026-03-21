@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <!-- CSS Custom (mesmo do index original) -->
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/header.css" />
     <style>
       /* Garantia de consistência com o CSS fornecido */
       .paragraph-text,
@@ -120,6 +121,11 @@
         color: var(--accent-primary);
         margin-bottom: 1rem;
       }
+      .alert.alert-info.mt-3,
+      .alert.alert-warning.mt-3 {
+        background-color: #22202f !important;
+        color: white !important;
+      }
     </style>
   </head>
   <body>
@@ -127,29 +133,94 @@
     <header class="header fixed-top">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="#"> <i class="fas fa-mobile-alt me-2"></i>Mobile Masterclass </a>
+          <a class="navbar-brand" href="#">
+            <i class="fas fa-mobile-alt me-2"></i>
+            <span class="brand-text">Mobile Masterclass</span>
+          </a>
+
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
           </button>
+
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#resumo-tecnico"><i class="fas fa-code me-1"></i>Fundamentos</a>
+                <a class="nav-link" href="#fundamentos">
+                  <i class="fas fa-layer-group me-1"></i>
+                  <span>Fundamentos</span>
+                </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#casos-praticos"><i class="fas fa-briefcase me-1"></i>Casos de Uso</a>
+                <a class="nav-link" href="#casos-praticos">
+                  <i class="fas fa-briefcase me-1"></i>
+                  <span>Casos de Uso</span>
+                </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#questionario"><i class="fas fa-question-circle me-1"></i>Questionário</a>
+                <a class="nav-link" href="#questionario">
+                  <i class="fas fa-question-circle me-1"></i>
+                  <span>Questionário</span>
+                </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#kotlin-java"><i class="fab fa-java me-1"></i>Java vs Kotlin</a>
+                <a class="nav-link" href="#kotlin-java">
+                  <i class="fab fa-java me-1"></i>
+                  <span>Java vs Kotlin</span>
+                </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#tecnologias"><i class="fas fa-microchip me-1"></i>Tecnologias</a>
+                <a class="nav-link" href="#tecnologias">
+                  <i class="fas fa-microchip me-1"></i>
+                  <span>Tecnologias</span>
+                </a>
+              </li>
+
+              <!-- Dropdown de Estudo -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="estudoDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-graduation-cap me-1"></i>
+                  <span>Estudo</span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="estudoDropdown">
+                  <li>
+                    <a class="dropdown-item" href="#estudo-aprofundado">
+                      <i class="fas fa-brain me-2"></i>
+                      Material Estudo
+                      <small class="dropdown-subtitle">CSS, Responsividade, Media Queries</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#estudo-mobile">
+                      <i class="fab fa-android me-2"></i>
+                      Estudo Mobile
+                      <small class="dropdown-subtitle">Flutter, Widgets, State Management</small>
+                    </a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/pages/imersao_mobile.html">
+                      <i class="fas fa-mobile-alt me-2"></i>
+                      Desenvolvimento Mobile
+                      <small class="dropdown-subtitle">Página completa de mobile</small>
+                    </a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
+        </div>
+
+        <!-- Barra de Progresso Personalizada -->
+        <div class="progress-container">
+          <div class="progress-bar-custom"></div>
+          <div class="progress-glow"></div>
         </div>
       </nav>
     </header>
@@ -305,7 +376,7 @@
             <div class="col-md-6">
               <div class="case-card card h-100">
                 <div class="card-body">
-                  <div class="case-icon"><i class="fab fa-flutter"></i></div>
+                  <div class="case-icon"><i class="fas fa-cubes"></i></div>
                   <h3>Flutter / Widgets</h3>
                   <p class="problem">Cada botão, campo de texto é um Widget independente</p>
                   <div class="solution">
@@ -624,6 +695,919 @@
           </div>
         </div>
       </section>
+      <!-- Seção de Estudo Aprofundado para Prova -->
+      <section id="estudo-aprofundado" class="section-padding bg-darker">
+        <div class="container">
+          <h2 class="section-title">
+            <i class="fas fa-graduation-cap me-3"></i>
+            Material de Estudo para Prova Presencial
+          </h2>
+          <p class="text-center text-gray mb-5">Questões comentadas com explicações detalhadas para aprofundamento</p>
+
+          <!-- Questão 1 - Mobile First -->
+          <div class="card mb-5 study-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                  <div class="question-number">01</div>
+                  <span class="badge bg-primary mt-2">Mobile First</span>
+                </div>
+                <div class="col-md-9 col-lg-10">
+                  <h3 class="mb-3">Mobile First: Por que começar pelo celular?</h3>
+                  <div class="question-text mb-4">
+                    <i class="fas fa-quote-left me-2 text-primary"></i>
+                    A abordagem mobile-first prioriza o desenvolvimento para dispositivos móveis antes da adaptação para telas maiores. Qual
+                    é a principal vantagem dessa estratégia?
+                  </div>
+
+                  <div class="row mt-4">
+                    <div class="col-md-6">
+                      <div class="answer-box correct">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>Resposta Correta: c) Priorização do conteúdo essencial desde o início</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="explanation-box mt-4">
+                    <h4><i class="fas fa-lightbulb me-2"></i>Explicação Detalhada</h4>
+                    <p>
+                      <strong>Contexto e Conceito:</strong> Mobile First é uma metodologia de design que surgiu com a explosão do uso de
+                      dispositivos móveis. Ao contrário do "Desktop First" (abordagem antiga), começar pelo mobile força o desenvolvedor a
+                      focar no que realmente importa.
+                    </p>
+
+                    <div class="row mt-3">
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-plus-circle text-success me-1"></i>Vantagens:</h5>
+                        <ul class="list-unstyled">
+                          <li><i class="fas fa-check text-success me-2"></i>Conteúdo essencial priorizado</li>
+                          <li><i class="fas fa-check text-success me-2"></i>Performance otimizada</li>
+                          <li><i class="fas fa-check text-success me-2"></i>Melhor SEO (Google prioriza mobile)</li>
+                          <li><i class="fas fa-check text-success me-2"></i>Menos código, mais eficiência</li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-chart-line text-info me-1"></i>Por que as outras estão erradas:</h5>
+                        <ul class="list-unstyled">
+                          <li><i class="fas fa-times text-danger me-2"></i>a) Layouts complexos - mobile-first simplifica</li>
+                          <li><i class="fas fa-times text-danger me-2"></i>b) Consumo de recursos - mobile-first reduz</li>
+                          <li><i class="fas fa-times text-danger me-2"></i>d) Frameworks específicos - não é obrigatório</li>
+                          <li><i class="fas fa-times text-danger me-2"></i>e) Eliminar CSS - impossível, CSS é essencial</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="concept-tip mt-3">
+                      <i class="fas fa-graduation-cap"></i>
+                      <strong>Dica para Prova:</strong> Lembre-se: mobile-first = "conteúdo primeiro". A estratégia força você a pensar no
+                      essencial antes de adicionar "frufrus" para telas grandes.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Questão 2 - Função do CSS -->
+          <div class="card mb-5 study-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                  <div class="question-number">02</div>
+                  <span class="badge bg-primary mt-2">CSS Fundamentos</span>
+                </div>
+                <div class="col-md-9 col-lg-10">
+                  <h3 class="mb-3">Qual é a principal função do CSS?</h3>
+                  <div class="question-text mb-4">
+                    <i class="fas fa-quote-left me-2 text-primary"></i>
+                    O CSS é uma tecnologia essencial no desenvolvimento web. Com base nesse contexto, qual é a sua principal função?
+                  </div>
+
+                  <div class="row mt-4">
+                    <div class="col-md-6">
+                      <div class="answer-box correct">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>Resposta Correta: b) Controlar a apresentação visual e o layout dos elementos</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="explanation-box mt-4">
+                    <h4><i class="fas fa-lightbulb me-2"></i>Explicação Detalhada</h4>
+                    <p>
+                      <strong>Contexto e Conceito:</strong> CSS (Cascading Style Sheets) foi criado para separar a apresentação do conteúdo.
+                      Antes do CSS, a formatação era feita diretamente no HTML (com tags como &lt;font&gt;), o que gerava código poluído e
+                      difícil de manter.
+                    </p>
+
+                    <div class="row mt-3">
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-css3-alt text-info me-1"></i>O que cada tecnologia faz:</h5>
+                        <ul class="list-unstyled">
+                          <li><i class="fab fa-html5 text-warning me-2"></i><strong>HTML:</strong> Estrutura e conteúdo</li>
+                          <li><i class="fab fa-css3-alt text-primary me-2"></i><strong>CSS:</strong> Estilo e layout</li>
+                          <li><i class="fab fa-js text-warning me-2"></i><strong>JavaScript:</strong> Comportamento e interação</li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-times-circle text-danger me-1"></i>Por que as outras estão erradas:</h5>
+                        <ul class="list-unstyled">
+                          <li><i class="fas fa-times text-danger me-2"></i>a) Estrutura semântica → função do HTML</li>
+                          <li><i class="fas fa-times text-danger me-2"></i>c) Comunicação servidor → função do backend</li>
+                          <li><i class="fas fa-times text-danger me-2"></i>d) Armazenar dados → função do localStorage ou banco</li>
+                          <li><i class="fas fa-times text-danger me-2"></i>e) Regras de negócio → função do JavaScript/backend</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="concept-tip mt-3">
+                      <i class="fas fa-graduation-cap"></i>
+                      <strong>Dica para Prova:</strong> Separação de preocupações: HTML = conteúdo, CSS = aparência, JS = comportamento.
+                      Essa é uma pergunta clássica de fundamentos!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Questão 3 - Frameworks Front-end -->
+          <div class="card mb-5 study-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                  <div class="question-number">03</div>
+                  <span class="badge bg-primary mt-2">Frameworks</span>
+                </div>
+                <div class="col-md-9 col-lg-10">
+                  <h3 class="mb-3">Frameworks Front-end e Layouts Responsivos</h3>
+                  <div class="question-text mb-4">
+                    <i class="fas fa-quote-left me-2 text-primary"></i>
+                    Frameworks e bibliotecas front-end auxiliam na criação de layouts responsivos. Qual característica é comum nesses
+                    frameworks?
+                  </div>
+
+                  <div class="row mt-4">
+                    <div class="col-md-6">
+                      <div class="answer-box correct">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>Resposta Correta: c) Sistema de grid flexível e responsivo</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="explanation-box mt-4">
+                    <h4><i class="fas fa-lightbulb me-2"></i>Explicação Detalhada</h4>
+                    <p>
+                      <strong>Contexto e Conceito:</strong> Frameworks como Bootstrap, Tailwind CSS e Foundation revolucionaram o
+                      desenvolvimento front-end ao fornecer componentes prontos e sistemas de grid que se adaptam automaticamente a
+                      diferentes tamanhos de tela.
+                    </p>
+
+                    <div class="row mt-3">
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-th text-info me-1"></i>Principais frameworks:</h5>
+                        <ul class="list-unstyled">
+                          <li><i class="fab fa-bootstrap text-purple me-2"></i><strong>Bootstrap:</strong> Grid de 12 colunas</li>
+                          <li><i class="fas fa-wind text-cyan me-2"></i><strong>Tailwind CSS:</strong> Utility-first</li>
+                          <li><i class="fab fa-sass text-pink me-2"></i><strong>Foundation:</strong> Grid flexível</li>
+                          <li><i class="fas fa-boxes me-2"></i><strong>Materialize:</strong> Material Design</li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-cogs text-warning me-1"></i>Características comuns:</h5>
+                        <ul class="list-unstyled">
+                          <li><i class="fas fa-check text-success me-2"></i>Sistema de grid responsivo</li>
+                          <li><i class="fas fa-check text-success me-2"></i>Componentes pré-estilizados</li>
+                          <li><i class="fas fa-check text-success me-2"></i>Breakpoints predefinidos</li>
+                          <li><i class="fas fa-check text-success me-2"></i>Documentação extensa</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="alert alert-info mt-3">
+                      <i class="fas fa-code me-2"></i>
+                      <strong>Exemplo de grid Bootstrap:</strong>
+                      <code class="d-block mt-2 bg-dark p-2 rounded"
+                        >&lt;div class="row"&gt;<br />
+                        &nbsp;&nbsp;&lt;div class="col-md-6 col-sm-12"&gt;Conteúdo&lt;/div&gt;<br />
+                        &nbsp;&nbsp;&lt;div class="col-md-6 col-sm-12"&gt;Conteúdo&lt;/div&gt;<br />
+                        &lt;/div&gt;</code
+                      >
+                      <small class="text-gray mt-1 d-block">No desktop: 2 colunas (6+6) | No mobile: 1 coluna (12+12)</small>
+                    </div>
+
+                    <div class="concept-tip mt-3">
+                      <i class="fas fa-graduation-cap"></i>
+                      <strong>Dica para Prova:</strong> Todo framework front-end moderno tem um sistema de grid. É a principal ferramenta
+                      para criar layouts responsivos sem reinventar a roda!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Questão 4 - Media Queries -->
+          <div class="card mb-5 study-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                  <div class="question-number">04</div>
+                  <span class="badge bg-primary mt-2">Responsividade</span>
+                </div>
+                <div class="col-md-9 col-lg-10">
+                  <h3 class="mb-3">Media Queries: O Coração do Design Responsivo</h3>
+                  <div class="question-text mb-4">
+                    <i class="fas fa-quote-left me-2 text-primary"></i>
+                    O web design responsivo busca garantir uma boa experiência em diferentes tamanhos de tela. Qual conceito é fundamental
+                    para seu funcionamento?
+                  </div>
+
+                  <div class="row mt-4">
+                    <div class="col-md-6">
+                      <div class="answer-box correct">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>Resposta Correta: c) Uso de media queries para adaptação do layout</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="explanation-box mt-4">
+                    <h4><i class="fas fa-lightbulb me-2"></i>Explicação Detalhada</h4>
+                    <p>
+                      <strong>Contexto e Conceito:</strong> Media Queries são o pilar fundamental do design responsivo. Introduzidas no
+                      CSS3, elas permitem aplicar estilos condicionais baseados nas características do dispositivo (largura, altura,
+                      orientação, resolução).
+                    </p>
+
+                    <div class="row mt-3">
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-mobile-alt me-2"></i>Breakpoints comuns:</h5>
+                        <ul class="list-unstyled">
+                          <li><i class="fas fa-mobile me-2"></i>Mobile: até 576px</li>
+                          <li><i class="fas fa-tablet-alt me-2"></i>Tablet: 577px - 768px</li>
+                          <li><i class="fas fa-laptop me-2"></i>Desktop: 769px - 1024px</li>
+                          <li><i class="fas fa-desktop me-2"></i>Grande: acima de 1025px</li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-code me-2"></i>Sintaxe básica:</h5>
+                        <pre class="bg-dark p-2 rounded small"><code>/* Mobile First */
+@media (min-width: 768px) {
+  .container { width: 750px; }
+}
+
+@media (min-width: 992px) {
+  .container { width: 970px; }
+}</code></pre>
+                      </div>
+                    </div>
+
+                    <div class="alert alert-warning mt-3">
+                      <i class="fas fa-exclamation-triangle me-2"></i>
+                      <strong>Por que as outras estão erradas:</strong>
+                      <ul class="mt-2 mb-0">
+                        <li>a) Imagens em alta resolução → só resolvem um aspecto (imagens)</li>
+                        <li>b) Layouts fixos em pixels → não se adaptam, são o oposto do responsivo</li>
+                        <li>d) Plugins externos → não são fundamentais, media queries são nativas</li>
+                        <li>e) Separar sites por dispositivo → abordagem antiga (m.site.com), não é responsivo</li>
+                      </ul>
+                    </div>
+
+                    <div class="concept-tip mt-3">
+                      <i class="fas fa-graduation-cap"></i>
+                      <strong>Dica para Prova:</strong> Responsividade sem media queries é impossível! Elas são a ferramenta que permite
+                      "perguntar" ao dispositivo seu tamanho e ajustar o layout. Questão certeira!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Questão 5 - Pseudoclasses -->
+          <div class="card mb-5 study-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                  <div class="question-number">05</div>
+                  <span class="badge bg-primary mt-2">Pseudoclasses CSS</span>
+                </div>
+                <div class="col-md-9 col-lg-10">
+                  <h3 class="mb-3">Pseudoclasses: Estilos Baseados em Estado</h3>
+                  <div class="question-text mb-4">
+                    <i class="fas fa-quote-left me-2 text-primary"></i>
+                    Pseudoclasses permitem aplicar estilos com base no estado do elemento. Qual pseudoclasse é usada para estilo ao passar o
+                    mouse?
+                  </div>
+
+                  <div class="row mt-4">
+                    <div class="col-md-6">
+                      <div class="answer-box correct">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>Resposta Correta: b) :hover</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="explanation-box mt-4">
+                    <h4><i class="fas fa-lightbulb me-2"></i>Explicação Detalhada</h4>
+                    <p>
+                      <strong>Contexto e Conceito:</strong> Pseudoclasses são palavras-chave adicionadas a seletores CSS que especificam um
+                      estado especial do elemento. :hover é uma das mais utilizadas para criar interatividade sem JavaScript.
+                    </p>
+
+                    <div class="row mt-3">
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-mouse-pointer me-2"></i>Principais pseudoclasses:</h5>
+                        <ul class="list-unstyled">
+                          <li><i class="fas fa-hand-point-right me-2 text-info"></i><strong>:hover</strong> → mouse sobre o elemento</li>
+                          <li><i class="fas fa-hand-pointer me-2 text-info"></i><strong>:active</strong> → momento do clique</li>
+                          <li><i class="fas fa-keyboard me-2 text-info"></i><strong>:focus</strong> → elemento focado (formulários)</li>
+                          <li><i class="fas fa-link me-2 text-info"></i><strong>:visited</strong> → link já visitado</li>
+                          <li><i class="fas fa-check-square me-2 text-info"></i><strong>:checked</strong> → checkbox/radio marcados</li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-code me-2"></i>Exemplo prático:</h5>
+                        <pre class="bg-dark p-2 rounded small"><code>/* Efeito hover em botão */
+.btn {
+  background: #6c5ce7;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: #5a4ad1;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}</code></pre>
+                      </div>
+                    </div>
+
+                    <div class="table-responsive mt-3">
+                      <table class="table table-dark table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Pseudoclasse</th>
+                            <th>Quando aplica</th>
+                            <th>Uso comum</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><code>:hover</code></td>
+                            <td>Mouse sobre o elemento</td>
+                            <td>Botões, links, cards</td>
+                          </tr>
+                          <tr>
+                            <td><code>:active</code></td>
+                            <td>Durante o clique</td>
+                            <td>Feedback de clique</td>
+                          </tr>
+                          <tr>
+                            <td><code>:focus</code></td>
+                            <td>Elemento em foco</td>
+                            <td>Inputs, formulários</td>
+                          </tr>
+                          <tr>
+                            <td><code>:visited</code></td>
+                            <td>Link já clicado</td>
+                            <td>Links visitados</td>
+                          </tr>
+                          <tr>
+                            <td><code>:checked</code></td>
+                            <td>Checkbox/radio marcado</td>
+                            <td>Formulários customizados</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="concept-tip mt-3">
+                      <i class="fas fa-graduation-cap"></i>
+                      <strong>Dica para Prova:</strong> Decore os estados: hover = mouse em cima, active = clicando, focus = selecionado
+                      (tecla TAB ou clique). É uma das perguntas mais frequentes em provas de front-end!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resumo Final para Prova -->
+          <div class="card summary-card mt-4">
+            <div class="card-body">
+              <h3 class="text-center mb-4">
+                <i class="fas fa-star-of-life me-2 text-warning"></i>
+                Resumo para Prova Presencial
+                <i class="fas fa-star-of-life ms-2 text-warning"></i>
+              </h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="summary-item">
+                    <i class="fas fa-mobile-alt me-2 text-primary"></i>
+                    <strong>Mobile First:</strong> Priorizar conteúdo essencial, começar pelo mobile, usar min-width
+                  </div>
+                  <div class="summary-item">
+                    <i class="fab fa-css3-alt me-2 text-primary"></i>
+                    <strong>Função do CSS:</strong> Controlar apresentação visual e layout (nunca estrutura ou comportamento!)
+                  </div>
+                  <div class="summary-item">
+                    <i class="fas fa-th me-2 text-primary"></i>
+                    <strong>Frameworks:</strong> Sistema de grid responsivo é a principal característica comum
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="summary-item">
+                    <i class="fas fa-code me-2 text-primary"></i>
+                    <strong>Media Queries:</strong> Coração do design responsivo, adapta layout por tamanho de tela
+                  </div>
+                  <div class="summary-item">
+                    <i class="fas fa-mouse-pointer me-2 text-primary"></i>
+                    <strong>Pseudoclasses:</strong> :hover (mouse em cima), :active (clique), :focus (foco), :visited (links)
+                  </div>
+                </div>
+              </div>
+              <hr class="my-4" />
+              <p class="text-center text-gray">
+                <i class="fas fa-check-circle text-success me-2"></i>
+                Dica de Ouro: Na prova, leia atentamente o que cada pergunta pede. Muitas vezes a resposta está no próprio enunciado!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Seção de Estudo Aprofundado - Desenvolvimento Mobile -->
+      <section id="estudo-mobile" class="section-padding">
+        <div class="container">
+          <h2 class="section-title">
+            <i class="fab fa-android me-3"></i>
+            <i class="fab fa-apple me-2"></i>
+            Material de Estudo - Desenvolvimento Mobile
+          </h2>
+          <p class="text-center text-gray mb-5">Questões comentadas sobre Flutter, React Native, Android e persistência de dados</p>
+
+          <!-- Questão 1 - Flutter e Dart -->
+          <div class="card mb-5 study-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                  <div class="question-number">01</div>
+                  <span class="badge bg-primary mt-2">Flutter</span>
+                </div>
+                <div class="col-md-9 col-lg-10">
+                  <h3 class="mb-3">Flutter: A Linguagem que Revolucionou o Multiplataforma</h3>
+                  <div class="question-text mb-4">
+                    <i class="fas fa-quote-left me-2 text-primary"></i>
+                    Frameworks como Flutter e React Native permitem criar apps para diferentes sistemas com uma única base de código. Qual
+                    linguagem é utilizada principalmente no Flutter?
+                  </div>
+
+                  <div class="row mt-4">
+                    <div class="col-md-6">
+                      <div class="answer-box correct">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>Resposta Correta: a) Dart</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="explanation-box mt-4">
+                    <h4><i class="fas fa-lightbulb me-2"></i>Explicação Detalhada</h4>
+                    <p>
+                      <strong>Contexto e Conceito:</strong> Flutter foi criado pelo Google e utiliza Dart como linguagem de programação.
+                      Diferente de outras soluções multiplataforma que usam JavaScript (React Native) ou C# (Xamarin), o Flutter foi
+                      construído do zero com Dart para oferecer performance nativa.
+                    </p>
+
+                    <div class="row mt-3">
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-chart-line text-info me-1"></i>Por que Dart?</h5>
+                        <ul class="list-unstyled">
+                          <li><i class="fas fa-check text-success me-2"></i>Compilação nativa (AOT - Ahead of Time)</li>
+                          <li><i class="fas fa-check text-success me-2"></i>Hot Reload (JIT - Just in Time)</li>
+                          <li><i class="fas fa-check text-success me-2"></i>Performance próxima ao nativo</li>
+                          <li><i class="fas fa-check text-success me-2"></i>Sintaxe familiar (Java, JavaScript, C#)</li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-code-branch text-warning me-1"></i>Comparativo de Frameworks:</h5>
+                        <ul class="list-unstyled">
+                          <li><i class="fab fa-flutter text-primary me-2"></i><strong>Flutter:</strong> Dart</li>
+                          <li><i class="fab fa-react text-info me-2"></i><strong>React Native:</strong> JavaScript</li>
+                          <li><i class="fas fa-code text-success me-2"></i><strong>Xamarin:</strong> C#</li>
+                          <li><i class="fas fa-bolt text-warning me-2"></i><strong>Ionic:</strong> JavaScript/TypeScript</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="concept-tip mt-3">
+                      <i class="fas fa-graduation-cap"></i>
+                      <strong>Dica para Prova:</strong> Decore: Flutter = Dart (criado pelo Google), React Native = JavaScript (Facebook),
+                      Xamarin = C# (Microsoft). Essa é uma questão clássica de multiplataforma!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Questão 2 - Activity (Android) -->
+          <div class="card mb-5 study-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                  <div class="question-number">02</div>
+                  <span class="badge bg-primary mt-2">Android</span>
+                </div>
+                <div class="col-md-9 col-lg-10">
+                  <h3 class="mb-3">Componentes Android: A Activity como Tela</h3>
+                  <div class="question-text mb-4">
+                    <i class="fas fa-quote-left me-2 text-primary"></i>
+                    No Android, os aplicativos são compostos por componentes fundamentais. Qual componente é responsável por representar uma
+                    tela da aplicação?
+                  </div>
+
+                  <div class="row mt-4">
+                    <div class="col-md-6">
+                      <div class="answer-box correct">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>Resposta Correta: b) Activity</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="explanation-box mt-4">
+                    <h4><i class="fas fa-lightbulb me-2"></i>Explicação Detalhada</h4>
+                    <p>
+                      <strong>Contexto e Conceito:</strong> No Android, cada tela que o usuário vê é uma Activity. É o componente mais
+                      visível do sistema, responsável por desenhar a interface e gerenciar interações.
+                    </p>
+
+                    <div class="row mt-3">
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-android text-success me-1"></i>Componentes Android:</h5>
+                        <ul class="list-unstyled">
+                          <li><i class="fas fa-mobile-alt text-primary me-2"></i><strong>Activity:</strong> Representa uma tela (UI)</li>
+                          <li>
+                            <i class="fas fa-cogs text-info me-2"></i><strong>Service:</strong> Roda em background (música, sincronização)
+                          </li>
+                          <li>
+                            <i class="fas fa-broadcast-tower text-warning me-2"></i><strong>BroadcastReceiver:</strong> Responde a eventos
+                            do sistema
+                          </li>
+                          <li>
+                            <i class="fas fa-database text-success me-2"></i><strong>ContentProvider:</strong> Compartilha dados entre apps
+                          </li>
+                          <li>
+                            <i class="fas fa-puzzle-piece text-secondary me-2"></i><strong>Fragment:</strong> Parte modular de uma Activity
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-code me-2"></i>Exemplo básico:</h5>
+                        <pre class="bg-dark p-2 rounded small"><code>public class MainActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+}</code></pre>
+                      </div>
+                    </div>
+
+                    <div class="alert alert-info mt-3">
+                      <i class="fas fa-info-circle me-2"></i>
+                      <strong>Ciclo de Vida da Activity:</strong> onCreate → onStart → onResume → onPause → onStop → onDestroy
+                    </div>
+
+                    <div class="concept-tip mt-3">
+                      <i class="fas fa-graduation-cap"></i>
+                      <strong>Dica para Prova:</strong> Activity = Tela. É a regra básica! Service roda em segundo plano, BroadcastReceiver
+                      escuta eventos, ContentProvider compartilha dados.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Questão 3 - Persistência de Dados -->
+          <div class="card mb-5 study-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                  <div class="question-number">03</div>
+                  <span class="badge bg-primary mt-2">Persistência</span>
+                </div>
+                <div class="col-md-9 col-lg-10">
+                  <h3 class="mb-3">Armazenamento Local no Android: SQLite</h3>
+                  <div class="question-text mb-4">
+                    <i class="fas fa-quote-left me-2 text-primary"></i>
+                    A persistência de dados em aplicações Android permite armazenar informações localmente. Qual é uma das formas mais
+                    utilizadas para dados estruturados?
+                  </div>
+
+                  <div class="row mt-4">
+                    <div class="col-md-6">
+                      <div class="answer-box correct">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>Resposta Correta: b) SQLite</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="explanation-box mt-4">
+                    <h4><i class="fas fa-lightbulb me-2"></i>Explicação Detalhada</h4>
+                    <p>
+                      <strong>Contexto e Conceito:</strong> SQLite é um banco de dados relacional embutido no Android, ideal para armazenar
+                      dados estruturados como listas de produtos, usuários, mensagens, etc. É leve, rápido e não requer configuração de
+                      servidor.
+                    </p>
+
+                    <div class="row mt-3">
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-database text-info me-1"></i>Opções de persistência:</h5>
+                        <ul class="list-unstyled">
+                          <li><i class="fas fa-table text-success me-2"></i><strong>SQLite:</strong> Dados estruturados, relacionais</li>
+                          <li>
+                            <i class="fas fa-cog text-primary me-2"></i><strong>SharedPreferences:</strong> Configurações simples (pares
+                            chave-valor)
+                          </li>
+                          <li><i class="fas fa-hdd text-warning me-2"></i><strong>Arquivos internos:</strong> Dados não estruturados</li>
+                          <li>
+                            <i class="fas fa-cloud text-info me-2"></i><strong>Room:</strong> Camada de abstração sobre SQLite (recomendado)
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-code me-2"></i>Exemplo SQLite:</h5>
+                        <pre class="bg-dark p-2 rounded small"><code>// Criar tabela
+CREATE TABLE usuarios (
+    id INTEGER PRIMARY KEY,
+    nome TEXT,
+    email TEXT
+);
+
+// Inserir dados
+INSERT INTO usuarios VALUES (1, 'João', 'joao@email.com');</code></pre>
+                      </div>
+                    </div>
+
+                    <div class="alert alert-warning mt-3">
+                      <i class="fas fa-exclamation-triangle me-2"></i>
+                      <strong>Por que as outras estão erradas:</strong>
+                      <ul class="mt-2 mb-0">
+                        <li>a) SharedPreferences → só para dados simples (chave-valor)</li>
+                        <li>c) HTTP → é protocolo de rede, não persistência local</li>
+                        <li>d) JSON → é formato de dados, não armazenamento</li>
+                        <li>e) Intent → é para comunicação entre componentes</li>
+                      </ul>
+                    </div>
+
+                    <div class="concept-tip mt-3">
+                      <i class="fas fa-graduation-cap"></i>
+                      <strong>Dica para Prova:</strong> Dados estruturados = SQLite ou Room. Configurações simples = SharedPreferences. Essa
+                      é uma pergunta recorrente sobre persistência!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Questão 4 - Gerenciamento de Estado -->
+          <div class="card mb-5 study-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                  <div class="question-number">04</div>
+                  <span class="badge bg-primary mt-2">State Management</span>
+                </div>
+                <div class="col-md-9 col-lg-10">
+                  <h3 class="mb-3">Gerenciamento de Estado: O Coração das Apps Modernas</h3>
+                  <div class="question-text mb-4">
+                    <i class="fas fa-quote-left me-2 text-primary"></i>
+                    O gerenciamento de estado é essencial em aplicações mobile modernas. Qual é o principal objetivo do gerenciamento de
+                    estado em Flutter ou React Native?
+                  </div>
+
+                  <div class="row mt-4">
+                    <div class="col-md-6">
+                      <div class="answer-box correct">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>Resposta Correta: a) Controlar mudanças de dados e interface da aplicação</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="explanation-box mt-4">
+                    <h4><i class="fas fa-lightbulb me-2"></i>Explicação Detalhada</h4>
+                    <p>
+                      <strong>Contexto e Conceito:</strong> State Management (gerenciamento de estado) é a técnica que mantém a interface do
+                      usuário sincronizada com os dados da aplicação. Quando os dados mudam, a UI reage automaticamente.
+                    </p>
+
+                    <div class="row mt-3">
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-chart-line text-info me-1"></i>Principais abordagens:</h5>
+                        <ul class="list-unstyled">
+                          <li>
+                            <i class="fab fa-flutter text-primary me-2"></i><strong>Flutter:</strong> setState, Provider, Bloc, Riverpod
+                          </li>
+                          <li><i class="fab fa-react text-info me-2"></i><strong>React Native:</strong> useState, Redux, Context API</li>
+                          <li>
+                            <i class="fas fa-sync-alt text-success me-2"></i><strong>Reativo:</strong> UI reage automaticamente às mudanças
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-code me-2"></i>Exemplo Flutter:</h5>
+                        <pre class="bg-dark p-2 rounded small"><code>class Counter extends StatefulWidget {
+  @override
+  _CounterState createState() => _CounterState();
+}
+
+class _CounterState extends State&lt;Counter&gt; {
+  int _counter = 0;
+
+  void _increment() {
+    setState(() {
+      _counter++; // Atualiza UI automaticamente
+    });
+  }
+}</code></pre>
+                      </div>
+                    </div>
+
+                    <div class="alert alert-info mt-3">
+                      <i class="fas fa-chart-simple me-2"></i>
+                      <strong>Fluxo de dados:</strong> Evento do usuário → Atualiza Estado → UI reage → Nova renderização
+                    </div>
+
+                    <div class="concept-tip mt-3">
+                      <i class="fas fa-graduation-cap"></i>
+                      <strong>Dica para Prova:</strong> Gerenciamento de estado = manter UI sincronizada com dados. É o que torna apps
+                      reativas e dinâmicas! setState (Flutter) e useState (React) são os fundamentos.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Questão 5 - Widgets no Flutter -->
+          <div class="card mb-5 study-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                  <div class="question-number">05</div>
+                  <span class="badge bg-primary mt-2">Flutter Widgets</span>
+                </div>
+                <div class="col-md-9 col-lg-10">
+                  <h3 class="mb-3">Widgets: Os Blocos de Construção do Flutter</h3>
+                  <div class="question-text mb-4">
+                    <i class="fas fa-quote-left me-2 text-primary"></i>
+                    Em Flutter, a interface do usuário é construída a partir de componentes reutilizáveis. Esses componentes visuais são
+                    chamados de ______.
+                  </div>
+
+                  <div class="row mt-4">
+                    <div class="col-md-6">
+                      <div class="answer-box correct">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>Resposta Correta: b) widgets</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="explanation-box mt-4">
+                    <h4><i class="fas fa-lightbulb me-2"></i>Explicação Detalhada</h4>
+                    <p>
+                      <strong>Contexto e Conceito:</strong> No Flutter, TUDO é um Widget! Desde um simples botão até a tela inteira,
+                      passando por padding, margin, texto, imagem. Widgets são imutáveis e se organizam em uma árvore hierárquica.
+                    </p>
+
+                    <div class="row mt-3">
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-cubes text-info me-1"></i>Tipos de Widgets:</h5>
+                        <ul class="list-unstyled">
+                          <li><i class="fas fa-text-height text-primary me-2"></i><strong>StatelessWidget:</strong> Não muda (estático)</li>
+                          <li>
+                            <i class="fas fa-exchange-alt text-warning me-2"></i><strong>StatefulWidget:</strong> Pode mudar (dinâmico)
+                          </li>
+                          <li>
+                            <i class="fas fa-layer-group text-success me-2"></i><strong>Layout:</strong> Row, Column, Stack, Container
+                          </li>
+                          <li>
+                            <i class="fas fa-paint-brush text-info me-2"></i><strong>Material/Cupertino:</strong> Componentes estilizados
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6">
+                        <h5><i class="fas fa-code me-2"></i>Exemplo de Widgets:</h5>
+                        <pre class="bg-dark p-2 rounded small"><code>// Tudo são widgets!
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Olá')),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {},
+            child: Text('Clique'),
+          ),
+        ),
+      ),
+    );
+  }
+}</code></pre>
+                      </div>
+                    </div>
+
+                    <div class="alert alert-warning mt-3">
+                      <i class="fas fa-exclamation-triangle me-2"></i>
+                      <strong>Por que as outras estão erradas:</strong>
+                      <ul class="mt-2 mb-0">
+                        <li>a) Layouts → é uma característica, mas o nome correto é Widget</li>
+                        <li>c) Services → são para serviços/background</li>
+                        <li>d) Activities → é termo do Android nativo, não Flutter</li>
+                        <li>e) Packages → são bibliotecas, não componentes visuais</li>
+                      </ul>
+                    </div>
+
+                    <div class="concept-tip mt-3">
+                      <i class="fas fa-graduation-cap"></i>
+                      <strong>Dica para Prova:</strong> No Flutter: Widget = Tudo! É o mantra do framework. Decore: Stateless (fixo) vs
+                      Stateful (muda). Questão certeira!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resumo Final para Prova -->
+          <div class="card summary-card mt-4">
+            <div class="card-body">
+              <h3 class="text-center mb-4">
+                <i class="fas fa-star-of-life me-2 text-warning"></i>
+                Resumo para Prova Presencial - Desenvolvimento Mobile
+                <i class="fas fa-star-of-life ms-2 text-warning"></i>
+              </h3>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="summary-item">
+                    <i class="fab fa-flutter me-2 text-primary"></i>
+                    <strong>Flutter:</strong> Linguagem = Dart | Componentes = Widgets | Tudo é Widget!
+                  </div>
+                  <div class="summary-item">
+                    <i class="fab fa-react me-2 text-info"></i>
+                    <strong>React Native:</strong> Linguagem = JavaScript
+                  </div>
+                  <div class="summary-item">
+                    <i class="fab fa-android me-2 text-success"></i>
+                    <strong>Componentes Android:</strong> Activity = Tela, Service = Background
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="summary-item">
+                    <i class="fas fa-database me-2 text-warning"></i>
+                    <strong>Persistência:</strong> SQLite (estruturado) | SharedPreferences (configurações)
+                  </div>
+                  <div class="summary-item">
+                    <i class="fas fa-exchange-alt me-2 text-info"></i>
+                    <strong>State Management:</strong> Controlar dados e UI sincronizados
+                  </div>
+                  <div class="summary-item">
+                    <i class="fas fa-code-branch me-2 text-primary"></i>
+                    <strong>Flutter Widgets:</strong> StatelessWidget (fixo) | StatefulWidget (dinâmico)
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="summary-item">
+                    <i class="fas fa-mobile-alt me-2 text-success"></i>
+                    <strong>Multiplataforma:</strong> Uma base de código para Android e iOS
+                  </div>
+                  <div class="summary-item">
+                    <i class="fas fa-fire me-2 text-danger"></i>
+                    <strong>Hot Reload:</strong> Visualiza mudanças instantaneamente
+                  </div>
+                </div>
+              </div>
+              <hr class="my-4" />
+              <p class="text-center text-gray">
+                <i class="fas fa-check-circle text-success me-2"></i>
+                Dica de Ouro: No Flutter, se você lembrar que "Widgets são os blocos de construção" e "Dart é a linguagem", já acerta as
+                questões mais importantes!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
@@ -642,6 +1626,8 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/header.js"></script>
     <!-- Script de animação simples -->
     <script>
       // Smooth scroll e animações

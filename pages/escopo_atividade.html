@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HamburgueriaZ | Projeto Android Studio</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <style>
+      li,
+      p {
+        color: var(--text-gray);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Fixo com Navegação -->
+    <header class="header fixed-top">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <i class="fas fa-hamburger me-2"></i>
+            <span class="brand-text">HamburgueriaZ</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#resumo">
+                  <i class="fas fa-info-circle me-1"></i>
+                  <span>Resumo</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#checklist">
+                  <i class="fas fa-check-double me-1"></i>
+                  <span>Checklist</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#passo-a-passo">
+                  <i class="fas fa-list-ol me-1"></i>
+                  <span>Passo a Passo</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#entrega">
+                  <i class="fas fa-file-export me-1"></i>
+                  <span>Entrega</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Barra de Progresso -->
+        <div class="progress-container">
+          <div class="progress-bar-custom"></div>
+          <div class="progress-glow"></div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="row align-items-center min-vh-100">
+            <div class="col-lg-8 mx-auto text-center">
+              <h1 class="display-3 fw-bold mb-4"><span class="gradient-text">HamburgueriaZ:</span> App Android com Java</h1>
+              <p class="lead text-gray mb-5">
+                Construa um aplicativo funcional para montagem de pedidos personalizados, utilizando Java, Intents e estilização com temas
+                no Android Studio
+              </p>
+              <div class="hero-buttons">
+                <a href="#passo-a-passo" class="btn btn-primary btn-lg me-3"> <i class="fas fa-code me-2"></i>Iniciar Desenvolvimento </a>
+                <a href="#checklist" class="btn btn-outline-light btn-lg">
+                  <i class="fas fa-clipboard-list me-2"></i>Verificar Requisitos
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção Resumo do Objetivo -->
+      <section id="resumo" class="section-padding">
+        <div class="container">
+          <h2 class="section-title">
+            <i class="fas fa-bullseye me-3"></i>
+            Resumo do Objetivo
+          </h2>
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="card">
+                <div class="card-body p-4">
+                  <div class="row">
+                    <div class="col-md-3 text-center mb-3 mb-md-0">
+                      <i class="fas fa-mobile-alt fa-4x text-primary"></i>
+                    </div>
+                    <div class="col-md-9">
+                      <p class="text-gray mb-3">
+                        O objetivo desta atividade é construir um aplicativo Android funcional para uma hamburgueria, permitindo que os
+                        clientes montem seus pedidos de forma personalizada. Você praticará desde a criação da interface visual (UI) até a
+                        implementação da lógica de negócios, utilizando a linguagem <strong class="highlight-text">Java</strong> para
+                        processar as escolhas do usuário.
+                      </p>
+                      <p class="text-gray">
+                        Além do desenvolvimento interno, a atividade foca na interação entre aplicativos. Você aprenderá a padronizar
+                        estilos visuais através de <strong class="highlight-text">temas</strong> e a utilizar
+                        <strong class="highlight-text">Intents</strong> para exportar os dados do pedido (nome, adicionais, quantidade e
+                        preço) para um aplicativo de e-mail externo, simulando um processo real de finalização de pedido.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção Checklist de Requisitos -->
+      <section id="checklist" class="section-padding bg-darker">
+        <div class="container">
+          <h2 class="section-title">
+            <i class="fas fa-clipboard-list me-3"></i>
+            Checklist de Requisitos
+          </h2>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <i class="fas fa-cogs fa-2x text-primary mb-3"></i>
+                  <h3>Configuração do Projeto</h3>
+                  <ul class="list-unstyled mt-3">
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Nome: "HamburgueriaZ"</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Linguagem: Java</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Minimum SDK: API 23</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <i class="fas fa-paint-brush fa-2x text-primary mb-3"></i>
+                  <h3>Interface Visual (XML)</h3>
+                  <ul class="list-unstyled mt-3">
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Imagem de logo/banner no topo</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Campo para nome do cliente</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Checkboxes (Bacon, Queijo, Onion Rings)</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Seletor de quantidade (+ / -)</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Resumo do Pedido e Preço Total</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Botão "Fazer Pedido"</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <i class="fas fa-calculator fa-2x text-primary mb-3"></i>
+                  <h3>Regras de Negócio</h3>
+                  <ul class="list-unstyled mt-3">
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Preço base: <strong>R$ 20,00</strong></li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Bacon: + R$ 2,00</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Queijo: + R$ 2,00</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Onion Rings: + R$ 3,00</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Bloqueio de valores negativos</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <i class="fas fa-palette fa-2x text-primary mb-3"></i>
+                  <h3>Estilização</h3>
+                  <ul class="list-unstyled mt-3">
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Estilo global "EstiloTexto"</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Arquivo: <code>res/values/themes.xml</code></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                  <h3>Funcionalidade de Saída</h3>
+                  <ul class="list-unstyled mt-3">
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Intent com <code>ACTION_SENDTO</code></li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Assunto com nome do cliente</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Corpo com resumo formatado</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <i class="fas fa-file-export fa-2x text-primary mb-3"></i>
+                  <h3>Formato de Entrega</h3>
+                  <ul class="list-unstyled mt-3">
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Exportar projeto como .zip</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> File > Export > Export to Zip File</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção Passo a Passo -->
+      <section id="passo-a-passo" class="section-padding">
+        <div class="container">
+          <h2 class="section-title">
+            <i class="fas fa-list-ol me-3"></i>
+            Passo a Passo e Dicas Técnicas
+          </h2>
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="timeline">
+                <!-- Passo 1 -->
+                <div class="timeline-item">
+                  <div class="time-badge">1</div>
+                  <h4><i class="fas fa-cogs text-primary me-2"></i>Configuração do Projeto</h4>
+                  <p>Inicie um novo projeto com o template "Empty Activity".</p>
+                  <div class="concept-tip">
+                    <i class="fas fa-lightbulb"></i>
+                    <span
+                      >Certifique-se de selecionar <strong>Java</strong> como linguagem, pois o SDK e as instruções são baseados nela.</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Passo 2 -->
+                <div class="timeline-item">
+                  <div class="time-badge">2</div>
+                  <h4><i class="fas fa-code text-primary me-2"></i>Desenvolvimento do Layout (XML)</h4>
+                  <p>Monte a interface no <code>activity_main.xml</code>.</p>
+                  <div class="concept-tip">
+                    <i class="fas fa-lightbulb"></i>
+                    <span
+                      >Use <code>ImageView</code> para a logo, <code>EditText</code> para o nome, <code>CheckBox</code> para os adicionais e
+                      <code>Button</code> para as interações.</span
+                    >
+                  </div>
+                  <div class="mt-3">
+                    <pre class="bg-dark p-3 rounded"><code>&lt;ImageView
+    android:id="@+id/imgLogo"
+    android:layout_width="wrap_content"
+    android:layout_height="100dp"
+    android:src="@drawable/logo_hamburgueria" /&gt;
+
+&lt;EditText
+    android:id="@+id/etNomeCliente"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Digite seu nome" /&gt;
+
+&lt;CheckBox
+    android:id="@+id/cbBacon"
+    android:text="Bacon (+ R$ 2,00)" /&gt;
+
+&lt;CheckBox
+    android:id="@+id/cbQueijo"
+    android:text="Queijo (+ R$ 2,00)" /&gt;
+
+&lt;CheckBox
+    android:id="@+id/cbOnionRings"
+    android:text="Onion Rings (+ R$ 3,00)" /&gt;</code></pre>
+                  </div>
+                </div>
+
+                <!-- Passo 3 -->
+                <div class="timeline-item">
+                  <div class="time-badge">3</div>
+                  <h4><i class="fas fa-palette text-primary me-2"></i>Padronização Visual</h4>
+                  <p>Abra o arquivo <code>res/values/themes.xml</code> e crie a tag <code>&lt;style name="EstiloTexto"&gt;</code>.</p>
+                  <div class="concept-tip">
+                    <i class="fas fa-lightbulb"></i>
+                    <span
+                      >Aplique as propriedades: <code>wrap_content</code>, <code>center_vertical</code>, letras maiúsculas, tamanho 15sp e
+                      paddings de 16dp.</span
+                    >
+                  </div>
+                  <div class="mt-3">
+                    <pre class="bg-dark p-3 rounded"><code>&lt;style name="EstiloTexto"&gt;
+    &lt;item name="android:layout_width"&gt;wrap_content&lt;/item&gt;
+    &lt;item name="android:layout_height"&gt;wrap_content&lt;/item&gt;
+    &lt;item name="android:layout_gravity"&gt;center_vertical&lt;/item&gt;
+    &lt;item name="android:textAllCaps"&gt;true&lt;/item&gt;
+    &lt;item name="android:textSize"&gt;15sp&lt;/item&gt;
+    &lt;item name="android:padding"&gt;16dp&lt;/item&gt;
+&lt;/style&gt;</code></pre>
+                  </div>
+                </div>
+
+                <!-- Passo 4 -->
+                <div class="timeline-item">
+                  <div class="time-badge">4</div>
+                  <h4><i class="fab fa-java text-primary me-2"></i>Lógica da MainActivity (Java)</h4>
+                  <p>No arquivo <code>MainActivity.java</code>, declare as variáveis e vincule-as aos componentes do XML.</p>
+                  <div class="concept-tip">
+                    <i class="fas fa-lightbulb"></i>
+                    <span
+                      >Utilize o <code>ViewBinding</code> (se preferir) ou <code>findViewById</code> para manipular os componentes.</span
+                    >
+                  </div>
+                  <div class="mt-3">
+                    <pre class="bg-dark p-3 rounded"><code>public class MainActivity extends AppCompatActivity {
+    private EditText etNomeCliente;
+    private CheckBox cbBacon, cbQueijo, cbOnionRings;
+    private TextView tvQuantidade, tvResumo, tvTotal;
+    private Button btnMenos, btnMais, btnFazerPedido;
+    private int quantidade = 1;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Vincular componentes
+        etNomeCliente = findViewById(R.id.etNomeCliente);
+        cbBacon = findViewById(R.id.cbBacon);
+        cbQueijo = findViewById(R.id.cbQueijo);
+        cbOnionRings = findViewById(R.id.cbOnionRings);
+        tvQuantidade = findViewById(R.id.tvQuantidade);
+        tvResumo = findViewById(R.id.tvResumo);
+        tvTotal = findViewById(R.id.tvTotal);
+        btnMenos = findViewById(R.id.btnMenos);
+        btnMais = findViewById(R.id.btnMais);
+        btnFazerPedido = findViewById(R.id.btnFazerPedido);
+    }
+}</code></pre>
+                  </div>
+                </div>
+
+                <!-- Passo 5 -->
+                <div class="timeline-item">
+                  <div class="time-badge">5</div>
+                  <h4><i class="fas fa-plus-circle text-primary me-2"></i>Implementação dos Botões (+/-)</h4>
+                  <p>Crie as funções somar e subtrair para controlar a quantidade.</p>
+                  <div class="concept-tip">
+                    <i class="fas fa-lightbulb"></i>
+                    <span
+                      >Use uma variável global do tipo <code>int</code> para a quantidade e atualize a TextView correspondente com
+                      <code>setText()</code>. Bloqueie valores negativos.</span
+                    >
+                  </div>
+                  <div class="mt-3">
+                    <pre class="bg-dark p-3 rounded"><code>private void atualizarQuantidade() {
+    tvQuantidade.setText(String.valueOf(quantidade));
+    calcularPedido();
+}
+
+btnMais.setOnClickListener(v -> {
+    quantidade++;
+    atualizarQuantidade();
+});
+
+btnMenos.setOnClickListener(v -> {
+    if (quantidade > 1) {
+        quantidade--;
+        atualizarQuantidade();
+    }
+});</code></pre>
+                  </div>
+                </div>
+
+                <!-- Passo 6 -->
+                <div class="timeline-item">
+                  <div class="time-badge">6</div>
+                  <h4><i class="fas fa-calculator text-primary me-2"></i>Cálculo do Pedido</h4>
+                  <p>Implemente a lógica para calcular o preço total baseado nos adicionais e quantidade.</p>
+                  <div class="mt-3">
+                    <pre class="bg-dark p-3 rounded"><code>private void calcularPedido() {
+    double precoBase = 20.00;
+    double adicionais = 0;
+
+    if (cbBacon.isChecked()) adicionais += 2.00;
+    if (cbQueijo.isChecked()) adicionais += 2.00;
+    if (cbOnionRings.isChecked()) adicionais += 3.00;
+
+    double total = (precoBase + adicionais) * quantidade;
+
+    String resumo = String.format("Hambúrguer x%d\nAdicionais: %s\nTotal: R$ %.2f",
+        quantidade,
+        obterAdicionaisSelecionados(),
+        total);
+
+    tvResumo.setText(resumo);
+    tvTotal.setText(String.format("R$ %.2f", total));
+}</code></pre>
+                  </div>
+                </div>
+
+                <!-- Passo 7 -->
+                <div class="timeline-item">
+                  <div class="time-badge">7</div>
+                  <h4><i class="fas fa-envelope text-primary me-2"></i>Intent de E-mail</h4>
+                  <p>Implemente a função para enviar o pedido via Intent para o e-mail.</p>
+                  <div class="concept-tip">
+                    <i class="fas fa-lightbulb"></i>
+                    <span
+                      >Utilize um objeto <code>Intent</code> com a ação <code>ACTION_SENDTO</code>. Configure o "subject" com o nome do
+                      cliente e o corpo com o resumo formatado.</span
+                    >
+                  </div>
+                  <div class="mt-3">
+                    <pre class="bg-dark p-3 rounded"><code>private void enviarPedido() {
+    String nome = etNomeCliente.getText().toString().trim();
+    if (nome.isEmpty()) {
+        Toast.makeText(this, "Digite seu nome", Toast.LENGTH_SHORT).show();
+        return;
+    }
+
+    String assunto = "Pedido de " + nome;
+    String corpo = tvResumo.getText().toString();
+
+    Intent intent = new Intent(Intent.ACTION_SENDTO);
+    intent.setData(Uri.parse("mailto:"));
+    intent.putExtra(Intent.EXTRA_SUBJECT, assunto);
+    intent.putExtra(Intent.EXTRA_TEXT, corpo);
+
+    if (intent.resolveActivity(getPackageManager()) != null) {
+        startActivity(intent);
+    } else {
+        Toast.makeText(this, "Nenhum app de e-mail encontrado", Toast.LENGTH_SHORT).show();
+    }
+}
+
+btnFazerPedido.setOnClickListener(v -> enviarPedido());</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção Instruções de Entrega -->
+      <section id="entrega" class="section-padding bg-darker">
+        <div class="container">
+          <h2 class="section-title">
+            <i class="fas fa-file-export me-3"></i>
+            Instruções de Entrega
+          </h2>
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="card">
+                <div class="card-body p-4">
+                  <div class="text-center mb-4">
+                    <i class="fas fa-file-archive fa-4x text-primary"></i>
+                  </div>
+                  <h3 class="text-center mb-4">Como Exportar seu Projeto</h3>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="faq-card mb-3">
+                        <h4><i class="fas fa-folder-open text-primary me-2"></i>Formato do Arquivo</h4>
+                        <p>Você deve exportar o projeto inteiro para um arquivo <strong>.zip</strong></p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="faq-card mb-3">
+                        <h4><i class="fas fa-code-branch text-primary me-2"></i>Como Exportar</h4>
+                        <p>No Android Studio, vá em <strong>File > Export > Export to Zip File...</strong></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="faq-card">
+                    <h4><i class="fas fa-upload text-primary me-2"></i>O que enviar</h4>
+                    <p>O arquivo compactado gerado por esse processo deve ser salvo e enviado através da sua plataforma de estudos.</p>
+                  </div>
+                  <div class="concept-tip mt-4">
+                    <i class="fas fa-graduation-cap"></i>
+                    <strong>Bons estudos e mãos à obra!</strong> Se tiver dúvidas em algum componente específico do SDK, estou à disposição.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-0">© 2024 HamburgueriaZ - Projeto Android Studio</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <span><i class="fas fa-hamburger me-1"></i>Desenvolvido para Estudo</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/header.js"></script>
+  </body>
+</html>

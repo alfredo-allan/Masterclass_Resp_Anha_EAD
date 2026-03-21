@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/header.css" />
   </head>
   <body>
     <!-- Header Fixo com Navegação -->
@@ -25,25 +26,66 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#evolucao"><i class="fas fa-history me-1"></i>Evolução</a>
+                <a class="nav-link" href="#evolucao"> <i class="fas fa-chart-line me-1"></i>Evolução </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#conceitos"><i class="fas fa-lightbulb me-1"></i>Conceitos</a>
+                <a class="nav-link" href="#conceitos"> <i class="fas fa-brain me-1"></i>Conceitos </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#casos-uso"><i class="fas fa-briefcase me-1"></i>Casos de Uso</a>
+                <a class="nav-link" href="#casos-uso"> <i class="fas fa-briefcase me-1"></i>Casos de Uso </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#roteiro"><i class="fas fa-graduation-cap me-1"></i>Roteiro</a>
+                <a class="nav-link" href="#roteiro"> <i class="fas fa-road me-1"></i>Roteiro </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#comparativos"><i class="fas fa-scale-balanced me-1"></i>Comparativos</a>
+                <a class="nav-link" href="#comparativos"> <i class="fas fa-code-branch me-1"></i>Comparativos </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/pages/imersao_mobile.html"><i class="fas fa-mobile-alt me-1"></i>Desenvolvimento Mobile</a>
+
+              <!-- Dropdown de Estudo -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="estudoDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-graduation-cap me-1"></i>Estudo
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="estudoDropdown">
+                  <li>
+                    <a class="dropdown-item" href="#estudo-aprofundado">
+                      <i class="fas fa-brain me-2"></i>
+                      Material Estudo
+                      <small class="dropdown-subtitle">CSS, Responsividade, Media Queries</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#estudo-mobile">
+                      <i class="fab fa-android me-2"></i>
+                      Estudo Mobile
+                      <small class="dropdown-subtitle">Flutter, Widgets, State Management</small>
+                    </a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/pages/imersao_mobile.html">
+                      <i class="fas fa-mobile-alt me-2"></i>
+                      Desenvolvimento Mobile
+                      <small class="dropdown-subtitle">Página completa de mobile</small>
+                    </a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
+        </div>
+
+        <!-- Barra de Progresso Personalizada -->
+        <div class="progress-container">
+          <div class="progress-bar-custom"></div>
+          <div class="progress-glow"></div>
         </div>
       </nav>
     </header>
@@ -414,6 +456,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
-    <script src="script.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/header.js"></script>
   </body>
 </html>

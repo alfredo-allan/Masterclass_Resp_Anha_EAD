@@ -200,7 +200,7 @@ body {
 }
 
 .problem {
-  color: #ff6b6b;
+  color: #ffffff;
   font-weight: 500;
   margin: 15px 0;
   padding: 10px;
@@ -443,6 +443,10 @@ section:target {
 .paragraph-text,
 h4,
 .example-box,
-.alternativa {
+.alternativa,
+.question-text,
+.row .mt-4,
+.summary-item,
+.question-number {
   color: var(--text-gray);
 }
