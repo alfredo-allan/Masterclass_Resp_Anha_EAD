@@ -21,7 +21,7 @@
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -55,7 +55,7 @@ body {
 }
 
 .nav-link::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -80,26 +80,18 @@ body {
 }
 
 .hero-section::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
-    circle at 30% 50%,
-    rgba(108, 92, 231, 0.1) 0%,
-    transparent 50%
-  );
+  background: radial-gradient(circle at 30% 50%, rgba(108, 92, 231, 0.1) 0%, transparent 50%);
   pointer-events: none;
 }
 
 .gradient-text {
-  background: linear-gradient(
-    45deg,
-    var(--accent-primary),
-    var(--accent-secondary)
-  );
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -123,17 +115,13 @@ body {
 }
 
 .section-title::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100px;
   height: 4px;
-  background: linear-gradient(
-    90deg,
-    var(--accent-primary),
-    var(--accent-secondary)
-  );
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
   border-radius: 2px;
 }
 
@@ -175,11 +163,7 @@ body {
 }
 
 .badge.bg-primary {
-  background: linear-gradient(
-    45deg,
-    var(--accent-primary),
-    var(--accent-secondary)
-  ) !important;
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary)) !important;
 }
 
 /* Concept Tips */
@@ -202,11 +186,7 @@ body {
 .case-card .case-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(
-    45deg,
-    var(--accent-primary),
-    var(--accent-secondary)
-  );
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -243,17 +223,13 @@ body {
 }
 
 .timeline::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 30px;
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(
-    to bottom,
-    var(--accent-primary),
-    var(--accent-secondary)
-  );
+  background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary));
 }
 
 .timeline-item {
@@ -268,11 +244,7 @@ body {
   top: 0;
   width: 60px;
   height: 60px;
-  background: linear-gradient(
-    45deg,
-    var(--accent-primary),
-    var(--accent-secondary)
-  );
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -284,11 +256,7 @@ body {
 
 /* Comparison Cards */
 .comparison-card .card-header {
-  background: linear-gradient(
-    45deg,
-    var(--accent-primary),
-    var(--accent-secondary)
-  );
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
   color: white;
   padding: 30px;
   border: none;
@@ -326,11 +294,7 @@ body {
 .flex-example div {
   width: 50px;
   height: 50px;
-  background: linear-gradient(
-    45deg,
-    var(--accent-primary),
-    var(--accent-secondary)
-  );
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
   border-radius: 8px;
 }
 
@@ -342,11 +306,7 @@ body {
 
 .grid-example div {
   height: 50px;
-  background: linear-gradient(
-    45deg,
-    var(--accent-secondary),
-    var(--accent-primary)
-  );
+  background: linear-gradient(45deg, var(--accent-secondary), var(--accent-primary));
   border-radius: 8px;
 }
 
@@ -366,11 +326,7 @@ body {
 
 /* Buttons */
 .btn-primary {
-  background: linear-gradient(
-    45deg,
-    var(--accent-primary),
-    var(--accent-secondary)
-  );
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
   border: none;
   padding: 12px 30px;
   border-radius: 30px;
@@ -484,6 +440,9 @@ section:target {
   transform: translateY(0);
 }
 
-.paragraph-text {
+.paragraph-text,
+h4,
+.example-box,
+.alternativa {
   color: var(--text-gray);
 }

@@ -5,62 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Masterclass CSS | Fundamentos e Evolução</title>
     <!-- Bootstrap 5 CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Font Awesome 6 -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <!-- Anime.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <!-- Header Fixo com Navegação -->
     <header class="header fixed-top">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="#">
-            <i class="fas fa-code me-2"></i>CSS Masterclass
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
+          <a class="navbar-brand" href="#"> <i class="fas fa-code me-2"></i>CSS Masterclass </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#evolucao"
-                  ><i class="fas fa-history me-1"></i>Evolução</a
-                >
+                <a class="nav-link" href="#evolucao"><i class="fas fa-history me-1"></i>Evolução</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#conceitos"
-                  ><i class="fas fa-lightbulb me-1"></i>Conceitos</a
-                >
+                <a class="nav-link" href="#conceitos"><i class="fas fa-lightbulb me-1"></i>Conceitos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#casos-uso"
-                  ><i class="fas fa-briefcase me-1"></i>Casos de Uso</a
-                >
+                <a class="nav-link" href="#casos-uso"><i class="fas fa-briefcase me-1"></i>Casos de Uso</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#roteiro"
-                  ><i class="fas fa-graduation-cap me-1"></i>Roteiro</a
-                >
+                <a class="nav-link" href="#roteiro"><i class="fas fa-graduation-cap me-1"></i>Roteiro</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#comparativos"
-                  ><i class="fas fa-scale-balanced me-1"></i>Comparativos</a
-                >
+                <a class="nav-link" href="#comparativos"><i class="fas fa-scale-balanced me-1"></i>Comparativos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/imersao_mobile.html"><i class="fas fa-mobile-alt me-1"></i>Desenvolvimento Mobile</a>
               </li>
             </ul>
           </div>
@@ -74,21 +54,11 @@
         <div class="container">
           <div class="row align-items-center min-vh-100">
             <div class="col-lg-8 mx-auto text-center">
-              <h1 class="display-3 fw-bold mb-4">
-                <span class="gradient-text">Masterclass:</span> Responsividade e
-                Adaptabilidade na Web
-              </h1>
-              <p class="lead text-gray mb-5">
-                Domine os fundamentos do CSS e construa sites modernos,
-                responsivos e de alta performance
-              </p>
+              <h1 class="display-3 fw-bold mb-4"><span class="gradient-text">Masterclass:</span> Responsividade e Adaptabilidade na Web</h1>
+              <p class="lead text-gray mb-5">Domine os fundamentos do CSS e construa sites modernos, responsivos e de alta performance</p>
               <div class="hero-buttons">
-                <a href="#evolucao" class="btn btn-primary btn-lg me-3">
-                  <i class="fas fa-rocket me-2"></i>Começar Jornada
-                </a>
-                <a href="#comparativos" class="btn btn-outline-light btn-lg">
-                  <i class="fas fa-code-compare me-2"></i>Comparar Técnicas
-                </a>
+                <a href="#evolucao" class="btn btn-primary btn-lg me-3"> <i class="fas fa-rocket me-2"></i>Começar Jornada </a>
+                <a href="#comparativos" class="btn btn-outline-light btn-lg"> <i class="fas fa-code-compare me-2"></i>Comparar Técnicas </a>
               </div>
             </div>
           </div>
@@ -109,8 +79,7 @@
                   <i class="fas fa-code fa-3x text-primary mb-3"></i>
                   <h3>CSS1 (1996)</h3>
                   <p class="text-gray">
-                    Fontes básicas, cores e propriedades simples. O primeiro
-                    passo para separar conteúdo da apresentação.
+                    Fontes básicas, cores e propriedades simples. O primeiro passo para separar conteúdo da apresentação.
                   </p>
                   <span class="badge bg-primary">Fundação</span>
                 </div>
@@ -121,10 +90,7 @@
                 <div class="card-body">
                   <i class="fas fa-paint-brush fa-3x text-primary mb-3"></i>
                   <h3>CSS2 (1998)</h3>
-                  <p class="text-gray">
-                    Posicionamento, z-index, media types e suporte a diferentes
-                    mídias. Maior controle visual.
-                  </p>
+                  <p class="text-gray">Posicionamento, z-index, media types e suporte a diferentes mídias. Maior controle visual.</p>
                   <span class="badge bg-info">Evolução</span>
                 </div>
               </div>
@@ -134,10 +100,7 @@
                 <div class="card-body">
                   <i class="fas fa-cubes fa-3x text-primary mb-3"></i>
                   <h3>CSS3 (Módulos)</h3>
-                  <p class="text-gray">
-                    Flexbox, Grid, animações e media queries. Revolução no
-                    design responsivo.
-                  </p>
+                  <p class="text-gray">Flexbox, Grid, animações e media queries. Revolução no design responsivo.</p>
                   <span class="badge bg-success">Moderno</span>
                 </div>
               </div>
@@ -160,9 +123,8 @@
                   <i class="fas fa-bug fa-2x text-warning mb-3"></i>
                   <h3>Depuração (Debugging)</h3>
                   <p class="paragraph-text">
-                    Como um detetive procurando onde a peça está pegando no
-                    móvel. Testamos em vários dispositivos para encontrar e
-                    corrigir erros de layout.
+                    Como um detetive procurando onde a peça está pegando no móvel. Testamos em vários dispositivos para encontrar e corrigir
+                    erros de layout.
                   </p>
                   <div class="concept-tip">
                     <i class="fas fa-lightbulb"></i>
@@ -177,8 +139,7 @@
                   <i class="fas fa-rocket fa-2x text-warning mb-3"></i>
                   <h3>Otimização de Desempenho</h3>
                   <p class="paragraph-text">
-                    Como arrumar uma mala de viagem: leve apenas o necessário
-                    para que o site "viaje" rápido pela internet.
+                    Como arrumar uma mala de viagem: leve apenas o necessário para que o site "viaje" rápido pela internet.
                   </p>
                   <div class="concept-tip">
                     <i class="fas fa-lightbulb"></i>
@@ -192,10 +153,7 @@
                 <div class="card-body">
                   <i class="fas fa-image fa-2x text-warning mb-3"></i>
                   <h3>Imagens Adaptáveis</h3>
-                  <p class="paragraph-text">
-                    Como um balão de festa: aperta ou expande, mas nunca
-                    transborda da tela do celular.
-                  </p>
+                  <p class="paragraph-text">Como um balão de festa: aperta ou expande, mas nunca transborda da tela do celular.</p>
                   <div class="concept-tip">
                     <i class="fas fa-lightbulb"></i>
                     <span>max-width: 100% e srcset</span>
@@ -208,10 +166,7 @@
                 <div class="card-body">
                   <i class="fas fa-couch fa-2x text-warning mb-3"></i>
                   <h3>Componentes Responsivos</h3>
-                  <p class="paragraph-text">
-                    Sofá modular: reorganiza os itens conforme o espaço
-                    disponível (Flexbox e Grid).
-                  </p>
+                  <p class="paragraph-text">Sofá modular: reorganiza os itens conforme o espaço disponível (Flexbox e Grid).</p>
                   <div class="concept-tip">
                     <i class="fas fa-lightbulb"></i>
                     <span>Flexbox para 1D, Grid para 2D</span>
@@ -224,10 +179,7 @@
                 <div class="card-body">
                   <i class="fas fa-ruler fa-2x text-warning mb-3"></i>
                   <h3>Unidades Relativas</h3>
-                  <p class="paragraph-text">
-                    Elásticos em vez de réguas: %, em, rem se esticam conforme o
-                    tamanho da tela.
-                  </p>
+                  <p class="paragraph-text">Elásticos em vez de réguas: %, em, rem se esticam conforme o tamanho da tela.</p>
                   <div class="concept-tip">
                     <i class="fas fa-lightbulb"></i>
                     <span>rem para fontes, % para containers</span>
@@ -254,13 +206,10 @@
                     <i class="fas fa-store"></i>
                   </div>
                   <h3>O Pesadelo do E-commerce</h3>
-                  <p class="problem">
-                    15 segundos de carregamento no 4G por fotos gigantescas
-                  </p>
+                  <p class="problem">15 segundos de carregamento no 4G por fotos gigantescas</p>
                   <div class="solution">
                     <i class="fas fa-check-circle text-success"></i>
-                    <strong class="paragraph-text">Solução:</strong> Otimização
-                    de imagens e lazy loading
+                    <strong class="paragraph-text">Solução:</strong> Otimização de imagens e lazy loading
                   </div>
                 </div>
               </div>
@@ -272,13 +221,10 @@
                     <i class="fas fa-newspaper"></i>
                   </div>
                   <h3>O Botão Invisível</h3>
-                  <p class="problem">
-                    Botão "Ler Mais" desaparece em celulares antigos
-                  </p>
+                  <p class="problem">Botão "Ler Mais" desaparece em celulares antigos</p>
                   <div class="solution">
                     <i class="fas fa-check-circle text-success"></i>
-                    <strong>Solução:</strong> Depuração em dispositivos reais e
-                    media queries
+                    <strong>Solução:</strong> Depuração em dispositivos reais e media queries
                   </div>
                 </div>
               </div>
@@ -290,9 +236,7 @@
                     <i class="fas fa-bars"></i>
                   </div>
                   <h3>O Menu Confuso</h3>
-                  <p class="problem">
-                    Menu com 12 categorias ilegível no smartphone
-                  </p>
+                  <p class="problem">Menu com 12 categorias ilegível no smartphone</p>
                   <div class="solution">
                     <i class="fas fa-check-circle text-success"></i>
                     <strong>Solução:</strong> Menu hambúrguer com Flexbox
@@ -307,14 +251,10 @@
                     <i class="fas fa-text-height"></i>
                   </div>
                   <h3>A Fonte Gigante</h3>
-                  <p class="problem">
-                    Título lindo no monitor de 27" ocupa a tela inteira do
-                    celular
-                  </p>
+                  <p class="problem">Título lindo no monitor de 27" ocupa a tela inteira do celular</p>
                   <div class="solution">
                     <i class="fas fa-check-circle text-success"></i>
-                    <strong>Solução:</strong> Unidades relativas (rem, vw) e
-                    clamp()
+                    <strong>Solução:</strong> Unidades relativas (rem, vw) e clamp()
                   </div>
                 </div>
               </div>
@@ -336,34 +276,22 @@
                 <div class="timeline-item">
                   <div class="time-badge">15s</div>
                   <h4>O Problema</h4>
-                  <p>
-                    "Antigamente, sites fixos para computador. Hoje, cada tela
-                    tem um tamanho diferente."
-                  </p>
+                  <p>"Antigamente, sites fixos para computador. Hoje, cada tela tem um tamanho diferente."</p>
                 </div>
                 <div class="timeline-item">
                   <div class="time-badge">30s</div>
                   <h4>A Solução: Mobile-First</h4>
-                  <p>
-                    "Desenhamos primeiro para tela pequena, focando no
-                    essencial, depois expandimos."
-                  </p>
+                  <p>"Desenhamos primeiro para tela pequena, focando no essencial, depois expandimos."</p>
                 </div>
                 <div class="timeline-item">
                   <div class="time-badge">45s</div>
                   <h4>As Ferramentas</h4>
-                  <p>
-                    "Flexbox, Grid, unidades relativas e media queries trabalham
-                    juntos."
-                  </p>
+                  <p>"Flexbox, Grid, unidades relativas e media queries trabalham juntos."</p>
                 </div>
                 <div class="timeline-item">
                   <div class="time-badge">30s</div>
                   <h4>O Resultado</h4>
-                  <p>
-                    "Um código que atende todo mundo: melhor SEO, mais rápido,
-                    cliente feliz."
-                  </p>
+                  <p>"Um código que atende todo mundo: melhor SEO, mais rápido, cliente feliz."</p>
                 </div>
               </div>
             </div>
@@ -391,18 +319,9 @@
                       <i class="fas fa-check-circle text-success"></i>
                       Unidimensional (linha OU coluna)
                     </li>
-                    <li>
-                      <i class="fas fa-check-circle text-success"></i> Foco no
-                      conteúdo
-                    </li>
-                    <li>
-                      <i class="fas fa-check-circle text-success"></i> Ideal
-                      para: menus, listas, centralização
-                    </li>
-                    <li>
-                      <i class="fas fa-check-circle text-success"></i> Itens se
-                      ajustam ao conteúdo
-                    </li>
+                    <li><i class="fas fa-check-circle text-success"></i> Foco no conteúdo</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Ideal para: menus, listas, centralização</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Itens se ajustam ao conteúdo</li>
                   </ul>
                   <div class="example-box flex-example">
                     <div></div>
@@ -424,18 +343,9 @@
                       <i class="fas fa-check-circle text-success"></i>
                       Bidimensional (linhas E colunas)
                     </li>
-                    <li>
-                      <i class="fas fa-check-circle text-success"></i> Foco no
-                      layout
-                    </li>
-                    <li>
-                      <i class="fas fa-check-circle text-success"></i> Ideal
-                      para: dashboards, portais
-                    </li>
-                    <li>
-                      <i class="fas fa-check-circle text-success"></i> Itens se
-                      ajustam à grade
-                    </li>
+                    <li><i class="fas fa-check-circle text-success"></i> Foco no layout</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Ideal para: dashboards, portais</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Itens se ajustam à grade</li>
                   </ul>
                   <div class="example-box grid-example">
                     <div></div>
@@ -460,47 +370,26 @@
           <div class="row g-4">
             <div class="col-md-6">
               <div class="faq-card">
-                <h4>
-                  <i class="fas fa-sitemap text-primary me-2"></i>Hierarquia e
-                  Cascata
-                </h4>
-                <p>
-                  Inline > ID > Classe > Elemento. A última regra vence em caso
-                  de empate.
-                </p>
+                <h4><i class="fas fa-sitemap text-primary me-2"></i>Hierarquia e Cascata</h4>
+                <p>Inline > ID > Classe > Elemento. A última regra vence em caso de empate.</p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="faq-card">
-                <h4>
-                  <i class="fas fa-link text-primary me-2"></i>Vincular CSS ao
-                  HTML
-                </h4>
-                <p>
-                  Externo (link), Interno (style) ou Inline (style no elemento).
-                </p>
+                <h4><i class="fas fa-link text-primary me-2"></i>Vincular CSS ao HTML</h4>
+                <p>Externo (link), Interno (style) ou Inline (style no elemento).</p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="faq-card">
-                <h4>
-                  <i class="fas fa-phone text-primary me-2"></i>Mobile-First
-                </h4>
-                <p>
-                  Melhor performance, SEO e usabilidade. Comece pelo essencial.
-                </p>
+                <h4><i class="fas fa-phone text-primary me-2"></i>Mobile-First</h4>
+                <p>Melhor performance, SEO e usabilidade. Comece pelo essencial.</p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="faq-card">
-                <h4>
-                  <i class="fab fa-css3-alt text-primary me-2"></i>CSS1 vs CSS2
-                  vs CSS3 CSS3
-                </h4>
-                <p>
-                  CSS1: básico | CSS2: posicionamento | CSS3: módulos, Flexbox,
-                  Grid
-                </p>
+                <h4><i class="fab fa-css3-alt text-primary me-2"></i>CSS1 vs CSS2 vs CSS3 CSS3</h4>
+                <p>CSS1: básico | CSS2: posicionamento | CSS3: módulos, Flexbox, Grid</p>
               </div>
             </div>
           </div>
