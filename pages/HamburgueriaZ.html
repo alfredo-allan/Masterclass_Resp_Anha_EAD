@@ -1,0 +1,1352 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HamburgueriaZ | Documentação do Projeto Android</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+
+    <style>
+      /* Reset básico */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Estilos gerais */
+      body {
+        background: var(--bg-primary);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      /* Cada página é uma seção que ocupará uma página inteira */
+      .page-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 2rem;
+        background: var(--bg-primary);
+        position: relative;
+        page-break-after: always;
+        break-after: page;
+      }
+
+      .page-section:nth-child(even) {
+        background: var(--bg-darker);
+      }
+
+      /* Card de conteúdo - tamanho grande */
+      .content-card {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        background: var(--bg-secondary);
+        border-radius: 32px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--border-color);
+      }
+
+      /* Cabeçalho do card */
+      .card-header-custom {
+        background: linear-gradient(
+          135deg,
+          var(--accent-primary),
+          var(--accent-secondary)
+        );
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .card-header-custom .icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .card-header-custom h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin: 0;
+        color: white;
+      }
+
+      .card-header-custom .badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+
+      /* Corpo do card */
+      .card-body-custom {
+        padding: 3rem;
+      }
+
+      .description {
+        background: var(--bg-darker);
+        padding: 1.5rem;
+        border-radius: 20px;
+        margin-bottom: 2rem;
+        border-left: 4px solid var(--accent-primary);
+      }
+
+      .description h3 {
+        color: var(--accent-primary);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .description p {
+        color: var(--text-gray);
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      /* Container da imagem - GRANDE */
+      .image-container-large {
+        background: var(--bg-darker);
+        border-radius: 20px;
+        padding: 2rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--border-color);
+        transition: all 0.3s ease;
+      }
+
+      .image-container-large img {
+        max-width: 100%;
+        max-height: 800px;
+        object-fit: contain;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        display: block;
+      }
+
+      .image-container-large img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4);
+      }
+
+      /* Dicas técnicas */
+      .tech-tips {
+        background: rgba(108, 92, 231, 0.1);
+        padding: 1.5rem;
+        border-radius: 20px;
+        margin-top: 2rem;
+      }
+
+      .tech-tips h4 {
+        color: var(--accent-primary);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .tech-tips ul {
+        margin: 0;
+        padding-left: 1.5rem;
+      }
+
+      .tech-tips li {
+        color: var(--text-gray);
+        margin-bottom: 0.5rem;
+      }
+
+      .tech-tips p {
+        color: var(--text-gray);
+        margin: 0;
+      }
+
+      /* Número da página */
+      .page-number {
+        position: absolute;
+        bottom: 20px;
+        right: 30px;
+        color: var(--text-gray);
+        font-size: 0.9rem;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+      }
+
+      /* Botão de navegação */
+      .nav-buttons {
+        position: fixed;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 1000;
+      }
+
+      .nav-buttons .btn-nav {
+        background: var(--accent-primary);
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        margin: 0 0.5rem;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .nav-buttons .btn-nav:hover {
+        transform: scale(1.05);
+        background: var(--accent-secondary);
+      }
+
+      /* Modal/Lightbox */
+      .image-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 9999;
+        cursor: pointer;
+        backdrop-filter: blur(8px);
+      }
+
+      .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      .modal-content img {
+        max-width: 100%;
+        max-height: 85vh;
+        object-fit: contain;
+        border-radius: 12px;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.5);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+      }
+
+      .modal-nav button {
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: white;
+        font-size: 2rem;
+        padding: 15px 20px;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+
+      /* Impressão - cada seção em uma página */
+      @media print {
+        .navbar,
+        .footer,
+        .btn,
+        .progress-container,
+        .image-modal,
+        .modal-nav,
+        .modal-close,
+        .nav-buttons,
+        .hero-section,
+        .header,
+        .no-print {
+          display: none !important;
+        }
+
+        .page-section {
+          page-break-after: always;
+          break-after: page;
+          min-height: 100vh;
+          padding: 1rem;
+        }
+
+        .page-section:last-child {
+          page-break-after: auto;
+        }
+
+        .content-card {
+          box-shadow: none;
+          border: 1px solid #ddd;
+        }
+
+        .image-container-large img {
+          max-height: 400px;
+        }
+
+        .card-header-custom {
+          background: #6c5ce7;
+          print-color-adjust: exact;
+        }
+      }
+
+      /* Responsividade */
+      @media (max-width: 768px) {
+        .card-header-custom h1 {
+          font-size: 1.5rem;
+        }
+
+        .card-body-custom {
+          padding: 1.5rem;
+        }
+
+        .description p {
+          font-size: 1rem;
+        }
+
+        .image-container-large {
+          min-height: 300px;
+          padding: 1rem;
+        }
+
+        .image-container-large img {
+          max-height: 300px;
+        }
+      }
+
+      .badge-requisito {
+        background: linear-gradient(
+          45deg,
+          var(--accent-primary),
+          var(--accent-secondary)
+        );
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+        color: white;
+      }
+
+      .list-unstyled li {
+        margin-bottom: 0.75rem;
+        color: var(--text-gray);
+      }
+
+      .list-unstyled li i {
+        margin-right: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header fixed-top">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <i class="fas fa-hamburger me-2"></i>
+            <span class="brand-text">HamburgueriaZ</span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#resumo"
+                  ><i class="fas fa-info-circle me-1"></i>Resumo</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#checklist"
+                  ><i class="fas fa-check-double me-1"></i>Checklist</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#print1"
+                  ><i class="fas fa-camera me-1"></i>Prints</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#codigo1"
+                  ><i class="fas fa-code me-1"></i>Código</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#entrega"
+                  ><i class="fas fa-file-export me-1"></i>Entrega</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="progress-container">
+          <div class="progress-bar-custom"></div>
+          <div class="progress-glow"></div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <!-- Hero Section - apenas para web -->
+      <section class="hero-section no-print">
+        <div class="container">
+          <div class="row align-items-center min-vh-100">
+            <div class="col-lg-8 mx-auto text-center">
+              <h1 class="display-3 fw-bold mb-4">
+                <span class="gradient-text">HamburgueriaZ:</span> Documentação
+                Completa
+              </h1>
+              <p class="lead text-gray mb-5">
+                App Android desenvolvido em Java | Interface Personalizada |
+                Intent de E-mail
+              </p>
+              <div class="hero-buttons">
+                <button
+                  onclick="window.print()"
+                  class="btn btn-primary btn-lg me-3"
+                >
+                  <i class="fas fa-print me-2"></i>Exportar para PDF
+                </button>
+                <a href="#print1" class="btn btn-outline-light btn-lg">
+                  <i class="fas fa-camera me-2"></i>Ver Prints do Projeto
+                </a>
+              </div>
+              <div class="mt-4">
+                <span class="badge-requisito"
+                  ><i class="fab fa-java me-1"></i>Java</span
+                >
+                <span class="badge-requisito"
+                  ><i class="fab fa-android me-1"></i>Android Studio</span
+                >
+                <span class="badge-requisito"
+                  ><i class="fas fa-envelope me-1"></i>Intent
+                  ACTION_SENDTO</span
+                >
+                <span class="badge-requisito"
+                  ><i class="fas fa-palette me-1"></i>Themes.xml</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resumo do Objetivo - Página 1 -->
+      <div class="page-section" id="resumo">
+        <div class="content-card">
+          <div class="card-header-custom">
+            <div class="icon"><i class="fas fa-bullseye"></i></div>
+            <h1>Resumo do Objetivo</h1>
+          </div>
+          <div class="card-body-custom">
+            <div class="description">
+              <h3>
+                <i class="fas fa-quote-left me-2"></i>O que vamos construir?
+              </h3>
+              <p>
+                Construir um aplicativo Android funcional para uma hamburgueria,
+                permitindo que os clientes montem seus pedidos de forma
+                personalizada. Você praticará desde a criação da interface
+                visual (UI) até a implementação da lógica de negócios,
+                utilizando a linguagem <strong>Java</strong> para processar as
+                escolhas do usuário.
+              </p>
+              <p class="mt-3">
+                Além do desenvolvimento interno, a atividade foca na interação
+                entre aplicativos. Você aprenderá a padronizar estilos visuais
+                através de <strong>temas</strong> e a utilizar
+                <strong>Intents</strong> para exportar os dados do pedido (nome,
+                adicionais, quantidade e preço) para um aplicativo de e-mail
+                externo, simulando um processo real de finalização de pedido.
+              </p>
+            </div>
+            <div class="tech-tips">
+              <h4>
+                <i class="fas fa-lightbulb me-2"></i>Tecnologias Utilizadas
+              </h4>
+              <ul>
+                <li><strong>Java</strong> - Linguagem principal do projeto</li>
+                <li>
+                  <strong>Android Studio</strong> - IDE de desenvolvimento
+                </li>
+                <li><strong>XML</strong> - Interface do usuário</li>
+                <li><strong>Intent ACTION_SENDTO</strong> - Envio de e-mail</li>
+                <li><strong>Themes.xml</strong> - Estilização global</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="page-number">1 / 16</div>
+      </div>
+
+      <!-- Checklist de Requisitos - Página 2 -->
+      <div class="page-section" id="checklist">
+        <div class="content-card">
+          <div class="card-header-custom">
+            <div class="icon"><i class="fas fa-clipboard-list"></i></div>
+            <h1>Checklist de Requisitos</h1>
+            <span class="badge">✅ Obrigatório</span>
+          </div>
+          <div class="card-body-custom">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="description" style="margin-bottom: 1rem">
+                  <h3><i class="fas fa-cogs me-2"></i>Configuração</h3>
+                  <ul class="list-unstyled">
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Nome: <strong>"HamburgueriaZ"</strong>
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Linguagem: <strong>Java</strong>
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Minimum SDK: <strong>API 23</strong>
+                    </li>
+                  </ul>
+                </div>
+                <div class="description" style="margin-bottom: 1rem">
+                  <h3>
+                    <i class="fas fa-paint-brush me-2"></i>Interface Visual
+                  </h3>
+                  <ul class="list-unstyled">
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Logo/banner no topo
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Campo para nome do cliente
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Checkboxes (Bacon, Queijo, Onion Rings)
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Seletor de quantidade (+ / -)
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Resumo do Pedido e Preço Total
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Botão "Fazer Pedido"
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="description" style="margin-bottom: 1rem">
+                  <h3>
+                    <i class="fas fa-calculator me-2"></i>Regras de Negócio
+                  </h3>
+                  <ul class="list-unstyled">
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Preço base: <strong>R$ 20,00</strong>
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Bacon: <strong>+ R$ 2,00</strong>
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Queijo: <strong>+ R$ 2,00</strong>
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Onion Rings: <strong>+ R$ 3,00</strong>
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Bloqueio de valores negativos
+                    </li>
+                  </ul>
+                </div>
+                <div class="description" style="margin-bottom: 1rem">
+                  <h3>
+                    <i class="fas fa-envelope me-2"></i>Funcionalidade de Saída
+                  </h3>
+                  <ul class="list-unstyled">
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Intent com <code>ACTION_SENDTO</code>
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Assunto com nome do cliente
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Corpo com resumo formatado
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-number">2 / 16</div>
+      </div>
+
+      <!-- PRINTS DO PROJETO - Cada um em sua página com imagem via src -->
+
+      <!-- Print 1: Ícone do App -->
+      <div class="page-section" id="print1">
+        <div class="content-card">
+          <div class="card-header-custom">
+            <div class="icon"><i class="fas fa-desktop"></i></div>
+            <h1>Ícone do App na Área de Trabalho</h1>
+          </div>
+          <div class="card-body-custom">
+            <div class="description">
+              <h3><i class="fas fa-info-circle me-2"></i>Descrição</h3>
+              <p>
+                Print mostrando o ícone do aplicativo
+                <strong>HamburgueriaZ</strong> instalado na tela inicial do
+                dispositivo Android. O ícone deve estar visível junto com os
+                demais aplicativos do sistema.
+              </p>
+            </div>
+            <div class="image-container-large">
+              <img
+                src="/img/area_trabalho.png"
+                alt="Ícone do App na Área de Trabalho"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="tech-tips">
+              <h4><i class="fas fa-lightbulb me-2"></i>Dica Técnica</h4>
+              <p>
+                O ícone do app é definido no arquivo
+                <code>AndroidManifest.xml</code> e deve estar em formato PNG com
+                resolução adequada para diferentes densidades de tela (mdpi,
+                hdpi, xhdpi, xxhdpi, xxxhdpi).
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="page-number">3 / 16</div>
+      </div>
+
+      <!-- Print 2: Splash Screen -->
+      <div class="page-section" id="print2">
+        <div class="content-card">
+          <div class="card-header-custom">
+            <div class="icon"><i class="fas fa-play-circle"></i></div>
+            <h1>Splash Screen / Tela de Abertura</h1>
+          </div>
+          <div class="card-body-custom">
+            <div class="description">
+              <h3><i class="fas fa-info-circle me-2"></i>Descrição</h3>
+              <p>
+                Tela de abertura do aplicativo, exibida enquanto o app carrega.
+                Deve conter o logo da HamburgueriaZ e uma animação ou imagem de
+                fundo atrativa.
+              </p>
+            </div>
+            <div class="image-container-large">
+              <img
+                src="/img/tela_abertura.png"
+                alt="Splash Screen"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="tech-tips">
+              <h4><i class="fas fa-lightbulb me-2"></i>Dica Técnica</h4>
+              <p>
+                A Splash Screen pode ser implementada usando um tema
+                personalizado no <code>styles.xml</code> ou usando uma Activity
+                dedicada com atraso programado.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="page-number">4 / 16</div>
+      </div>
+      <div class="page-section" id="print5">
+        <div class="content-card">
+          <div class="card-header-custom">
+            <h1>Splash Screen</h1>
+          </div>
+          <div class="card-body-custom">
+            <div class="description">
+              <h3>
+                <i class="fas fa-info-circle me-2"></i>Descrição da Imagem
+              </h3>
+              <p>
+                <strong>Splash Screen / Tela de Abertura:</strong> Esta imagem
+                mostra a tela inicial do aplicativo
+                <strong>HamburgueriaZ</strong>, que é exibida enquanto o app
+                carrega seus recursos. A Splash Screen contém o logo da
+                hamburgueria, um fundo temático e uma animação suave que
+                proporciona uma experiência visual agradável ao usuário antes do
+                carregamento completo da aplicação.
+              </p>
+              <p class="mt-2">
+                <strong>Elementos presentes na Splash Screen:</strong>
+              </p>
+              <ul class="mt-1">
+                <li>
+                  <i class="fas fa-check-circle text-success me-2"></i>Logo da
+                  HamburgueriaZ com design personalizado
+                </li>
+                <li>
+                  <i class="fas fa-check-circle text-success me-2"></i>Fundo com
+                  tema de hambúrguer e ingredientes
+                </li>
+                <li>
+                  <i class="fas fa-check-circle text-success me-2"></i>Animação
+                  de fade-in para transição suave
+                </li>
+                <li>
+                  <i class="fas fa-check-circle text-success me-2"></i>Tempo de
+                  exibição: 2 segundos
+                </li>
+                <li>
+                  <i class="fas fa-check-circle text-success me-2"></i>Cores no
+                  padrão do aplicativo (roxo e laranja)
+                </li>
+              </ul>
+            </div>
+            <div class="image-container-large">
+              <img
+                src="/img/splash.png"
+                alt="Splash Screen - Tela de Abertura do App HamburgueriaZ"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="tech-tips">
+              <h4>
+                <i class="fas fa-lightbulb me-2"></i>Dica Técnica -
+                Implementação da Splash Screen
+              </h4>
+              <p>
+                <strong>Como implementar uma Splash Screen no Android:</strong>
+              </p>
+              <ul class="mt-2">
+                <li>
+                  <strong>Método 1 (Tema Personalizado):</strong> Crie um tema
+                  no <code>styles.xml</code> com
+                  <code>android:windowBackground</code> apontando para um
+                  drawable com a imagem de splash.
+                </li>
+                <li>
+                  <strong>Método 2 (Activity Dedicada):</strong> Crie uma
+                  <code>SplashActivity</code> que exibe a imagem por 2 segundos
+                  usando <code>Handler</code> e depois chama a
+                  <code>MainActivity</code>.
+                </li>
+                <li>
+                  <strong>Android 12+ (API 31):</strong> Use a API oficial
+                  <code>SplashScreen</code> com <code>splashScreenStyle</code> e
+                  <code>setSplashScreenTheme</code>.
+                </li>
+              </ul>
+              <p class="mt-2">
+                <code class="bg-dark p-1 rounded"
+                  >// Exemplo de SplashActivity em Java new
+                  Handler().postDelayed(new Runnable() { @Override public void
+                  run() { startActivity(new Intent(SplashActivity.this,
+                  MainActivity.class)); finish(); } }, 2000); // 2 segundos de
+                  splash</code
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="page-number">7 / 16</div>
+      </div>
+      <!-- Print 3: Layout Principal -->
+      <div class="page-section" id="print3">
+        <div class="content-card">
+          <div class="card-header-custom">
+            <div class="icon"><i class="fas fa-layout"></i></div>
+            <h1>Layout Principal do App</h1>
+          </div>
+          <div class="card-body-custom">
+            <div class="description">
+              <h3><i class="fas fa-info-circle me-2"></i>Descrição</h3>
+              <p>
+                Tela principal do aplicativo com todos os componentes visuais:
+                logo, campo de nome, checkboxes de adicionais, seletor de
+                quantidade, resumo do pedido, preço total e botão "Fazer
+                Pedido".
+              </p>
+            </div>
+            <div class="image-container-large">
+              <img
+                src="/img/layout.png"
+                alt="Layout Principal"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="tech-tips">
+              <h4><i class="fas fa-lightbulb me-2"></i>Dica Técnica</h4>
+              <p>
+                Utilize <code>ConstraintLayout</code> para posicionar os
+                elementos de forma flexível. Use <code>EditText</code> para o
+                nome, <code>CheckBox</code> para os adicionais e
+                <code>Button</code> para as interações.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="page-number">5 / 16</div>
+      </div>
+
+      <!-- Print 4: Seletor de Quantidade -->
+      <div class="page-section" id="print4">
+        <div class="content-card">
+          <div class="card-header-custom">
+            <div class="icon"><i class="fas fa-plus-circle"></i></div>
+            <h1>Seletor de Quantidade</h1>
+          </div>
+          <div class="card-body-custom">
+            <div class="description">
+              <h3><i class="fas fa-info-circle me-2"></i>Descrição</h3>
+              <p>
+                Componente de seleção de quantidade com botões "+" e "-"
+                funcionando. O valor atual deve ser exibido centralizado entre
+                os botões e não pode permitir valores negativos.
+              </p>
+            </div>
+            <div class="image-container-large">
+              <img
+                src="/img/layout.png"
+                alt="Seletor de Quantidade"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="tech-tips">
+              <h4><i class="fas fa-lightbulb me-2"></i>Dica Técnica</h4>
+              <p>
+                Use uma variável global <code>int quantidade</code> e dois
+                <code>Button</code> com <code>OnClickListener</code>. Atualize a
+                <code>TextView</code> com <code>setText()</code> e bloqueie
+                valores negativos com condicional
+                <code>if (quantidade > 1)</code>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="page-number">6 / 16</div>
+      </div>
+
+      <!-- Print 6: Intent de E-mail -->
+      <div class="page-section" id="print6">
+        <div class="content-card">
+          <div class="card-header-custom">
+            <div class="icon"><i class="fas fa-envelope"></i></div>
+            <h1>Intent de E-mail</h1>
+          </div>
+          <div class="card-body-custom">
+            <div class="description">
+              <h3><i class="fas fa-info-circle me-2"></i>Descrição</h3>
+              <p>
+                Print mostrando o aplicativo de e-mail aberto com o assunto e
+                corpo do e-mail preenchidos automaticamente com os dados do
+                pedido (nome do cliente, resumo e valor total).
+              </p>
+            </div>
+            <div class="image-container-large">
+              <img
+                src="/img/email.png"
+                alt="Intent de E-mail"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="tech-tips">
+              <h4><i class="fas fa-lightbulb me-2"></i>Dica Técnica</h4>
+              <p>
+                Use <code>Intent.ACTION_SENDTO</code> com
+                <code>Uri.parse("mailto:")</code>. Adicione extras:
+                <code>Intent.EXTRA_SUBJECT</code> para o assunto e
+                <code>Intent.EXTRA_TEXT</code> para o corpo do e-mail.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="page-number">8 / 16</div>
+      </div>
+
+      <!-- CÓDIGO FONTE - Cada um em sua página -->
+
+      <!-- Código 1: activity_main.xml -->
+      <div class="page-section" id="codigo1">
+        <div class="content-card">
+          <div class="card-header-custom">
+            <div class="icon"><i class="fab fa-android"></i></div>
+            <h1>activity_main.xml</h1>
+            <span class="badge">📄 Código 1</span>
+          </div>
+          <div class="card-body-custom">
+            <div class="description">
+              <h3><i class="fas fa-info-circle me-2"></i>Descrição</h3>
+              <p>
+                Arquivo XML que define o layout principal da aplicação. Contém
+                todos os componentes visuais: ImageView para logo, EditText para
+                nome, CheckBox para adicionais, LinearLayout para seletor de
+                quantidade, TextView para resumo e preço, e Button para enviar
+                pedido.
+              </p>
+            </div>
+            <div class="image-container-large">
+              <img
+                src="/img/activity_main.xml.png"
+                alt="activity_main.xml"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="tech-tips">
+              <h4><i class="fas fa-lightbulb me-2"></i>Dica Técnica</h4>
+              <p>
+                Utilize <code>ConstraintLayout</code> como raiz para melhor
+                performance. Use <code>android:id</code> único para cada
+                componente para facilitar a referência no Java. Aplique o estilo
+                <code>EstiloTexto</code> nos TextViews.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="page-number">9 / 16</div>
+      </div>
+
+      <!-- Código 2: themes.xml -->
+      <div class="page-section" id="codigo2">
+        <div class="content-card">
+          <div class="card-header-custom">
+            <div class="icon"><i class="fas fa-palette"></i></div>
+            <h1>themes.xml - EstiloTexto</h1>
+            <span class="badge">🎨 Código 2</span>
+          </div>
+          <div class="card-body-custom">
+            <div class="description">
+              <h3><i class="fas fa-info-circle me-2"></i>Descrição</h3>
+              <p>
+                Arquivo de estilos onde é definido o estilo global "EstiloTexto"
+                que padroniza a aparência dos textos em todo o aplicativo,
+                garantindo consistência visual.
+              </p>
+            </div>
+            <div class="image-container-large">
+              <img
+                src="/img/themes.xml.png"
+                alt="themes.xml"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="tech-tips">
+              <h4><i class="fas fa-lightbulb me-2"></i>Dica Técnica</h4>
+              <p>
+                O estilo deve conter:
+                <code>android:layout_width="wrap_content"</code>,
+                <code>android:layout_height="wrap_content"</code>,
+                <code>android:layout_gravity="center_vertical"</code>,
+                <code>android:textAllCaps="true"</code>,
+                <code>android:textSize="15sp"</code>,
+                <code>android:padding="16dp"</code>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="page-number">10 / 16</div>
+      </div>
+
+      <!-- Código 3: MainActivity.java Declarações -->
+      <div class="page-section" id="codigo3">
+        <div class="content-card">
+          <div class="card-header-custom">
+            <div class="icon"><i class="fab fa-java"></i></div>
+            <h1>MainActivity.java - Declarações</h1>
+            <span class="badge">☕ Código 3</span>
+          </div>
+          <div class="card-body-custom">
+            <div class="description">
+              <h3><i class="fas fa-info-circle me-2"></i>Descrição</h3>
+              <p>
+                Parte 1 do código Java: declaração das variáveis e vinculação
+                dos componentes no método <code>onCreate()</code>. Inclui todos
+                os elementos da interface: EditText, CheckBox, TextView e
+                Button.
+              </p>
+            </div>
+            <div class="image-container-large">
+              <img
+                src="/img/MainActivity.java.png"
+                alt="MainActivity Declarações"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="tech-tips">
+              <h4><i class="fas fa-lightbulb me-2"></i>Dica Técnica</h4>
+              <p>
+                Use <code>findViewById</code> para vincular cada componente.
+                Declare variáveis como
+                <code>private EditText etNomeCliente;</code>. Configure os
+                <code>OnClickListener</code> para os botões dentro do onCreate.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="page-number">11 / 16</div>
+      </div>
+
+      <!-- Código 4: MainActivity.java Lógica Quantidade -->
+      <div class="page-section" id="codigo4">
+        <div class="content-card">
+          <div class="card-header-custom">
+            <div class="icon"><i class="fab fa-java"></i></div>
+            <h1>MainActivity.java - Lógica de Quantidade</h1>
+            <span class="badge">➕ Código 4</span>
+          </div>
+          <div class="card-body-custom">
+            <div class="description">
+              <h3><i class="fas fa-info-circle me-2"></i>Descrição</h3>
+              <p>
+                Parte 2 do código: implementação dos botões "+" e "-" com lógica
+                para incrementar e decrementar a quantidade, bloqueando valores
+                negativos.
+              </p>
+            </div>
+            <div class="image-container-large">
+              <img
+                src="/img/MainActivity.java_2.png"
+                alt="Lógica Quantidade"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="tech-tips">
+              <h4><i class="fas fa-lightbulb me-2"></i>Dica Técnica</h4>
+              <p>
+                Crie uma variável <code>int quantidade = 1</code>. No click do
+                botão "+": <code>quantidade++</code>. No botão "-":
+                <code>if(quantidade > 1) quantidade--</code>. Atualize a
+                TextView com
+                <code>tvQuantidade.setText(String.valueOf(quantidade))</code> e
+                chame o método de cálculo.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="page-number">12 / 16</div>
+      </div>
+
+      <!-- Código 5: MainActivity.java Cálculo -->
+      <div class="page-section" id="codigo5">
+        <div class="content-card">
+          <div class="card-header-custom">
+            <div class="icon"><i class="fab fa-java"></i></div>
+            <h1>MainActivity.java - Cálculo do Pedido</h1>
+            <span class="badge">💰 Código 5</span>
+          </div>
+          <div class="card-body-custom">
+            <div class="description">
+              <h3><i class="fas fa-info-circle me-2"></i>Descrição</h3>
+              <p>
+                Parte 3 do código: método <code>calcularPedido()</code> que
+                processa os adicionais selecionados, calcula o preço total e
+                atualiza os TextViews de resumo e preço.
+              </p>
+            </div>
+            <div class="image-container-large">
+              <img
+                src="/img/MainActivity.java_3.png"
+                alt="Cálculo Pedido"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="tech-tips">
+              <h4><i class="fas fa-lightbulb me-2"></i>Dica Técnica</h4>
+              <p>
+                Preço base: R$20,00. Adicionais: Bacon R$2, Queijo R$2, Onion
+                Rings R$3. Calcule:
+                <code>total = (20 + adicionais) * quantidade</code>. Formate o
+                resumo com os itens selecionados.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="page-number">13 / 16</div>
+      </div>
+
+      <!-- Código 6: MainActivity.java Intent -->
+      <div class="page-section" id="codigo6">
+        <div class="content-card">
+          <div class="card-header-custom">
+            <div class="icon"><i class="fab fa-java"></i></div>
+            <h1>MainActivity.java - Intent de E-mail</h1>
+            <span class="badge">📧 Código 6</span>
+          </div>
+          <div class="card-body-custom">
+            <div class="description">
+              <h3><i class="fas fa-info-circle me-2"></i>Descrição</h3>
+              <p>
+                Parte 4 do código: método <code>enviarPedido()</code> que cria
+                uma Intent com ação <code>ACTION_SENDTO</code> para abrir o app
+                de e-mail com assunto e corpo preenchidos.
+              </p>
+            </div>
+            <div class="image-container-large">
+              <img
+                src="/img/MainActivity.java_4.png"
+                alt="Intent E-mail"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="tech-tips">
+              <h4><i class="fas fa-lightbulb me-2"></i>Dica Técnica</h4>
+              <p>
+                Use
+                <code>Intent intent = new Intent(Intent.ACTION_SENDTO);</code> e
+                <code>intent.setData(Uri.parse("mailto:"));</code>. Adicione
+                <code>EXTRA_SUBJECT</code> com o nome do cliente e
+                <code>EXTRA_TEXT</code> com o resumo do pedido.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="page-number">14 / 16</div>
+      </div>
+
+      <!-- Estrutura do Projeto -->
+      <div class="page-section" id="estrutura">
+        <div class="content-card">
+          <div class="card-header-custom">
+            <div class="icon"><i class="fas fa-folder-tree"></i></div>
+            <h1>Estrutura do Projeto</h1>
+            <span class="badge">📁 Código 7</span>
+          </div>
+          <div class="card-body-custom">
+            <div class="description">
+              <h3><i class="fas fa-info-circle me-2"></i>Descrição</h3>
+              <p>
+                Print mostrando a estrutura de arquivos do projeto no Android
+                Studio, incluindo as pastas <code>java</code>,
+                <code>res</code> (layout, drawable, values) e o arquivo
+                <code>AndroidManifest.xml</code>.
+              </p>
+            </div>
+            <div class="image-container-large">
+              <img
+                src="/img/estrutura.png"
+                alt="Estrutura do Projeto"
+                onclick="openModal(this)"
+              />
+            </div>
+            <div class="tech-tips">
+              <h4><i class="fas fa-lightbulb me-2"></i>Dica Técnica</h4>
+              <p>
+                Organize os arquivos XML em <code>res/layout</code>, imagens em
+                <code>res/drawable</code>, estilos em
+                <code>res/values/themes.xml</code>. O código Java fica em
+                <code>java/com/example/hamburgueriaz/MainActivity.java</code>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="page-number">15 / 16</div>
+      </div>
+
+      <!-- Instruções de Entrega - Última página -->
+      <div class="page-section" id="entrega">
+        <div class="content-card">
+          <div class="card-header-custom">
+            <div class="icon"><i class="fas fa-file-export"></i></div>
+            <h1>Instruções de Entrega</h1>
+            <span class="badge">📦 Entrega</span>
+          </div>
+          <div class="card-body-custom">
+            <div class="description">
+              <h3>
+                <i class="fas fa-download me-2"></i>O que deve ser entregue
+              </h3>
+              <ul class="list-unstyled">
+                <li>
+                  <i class="fas fa-file-zip text-warning me-2"></i>
+                  <strong>Arquivo .zip</strong> do projeto exportado pelo
+                  Android Studio
+                </li>
+                <li>
+                  <i class="fas fa-camera text-info me-2"></i>
+                  <strong>Prints de documentação</strong> (preenchidos nos
+                  espaços acima)
+                </li>
+                <li>
+                  <i class="fas fa-file-alt text-success me-2"></i> Esta página
+                  completa com todos os prints adicionados
+                </li>
+              </ul>
+            </div>
+            <div class="description mt-4">
+              <h3>
+                <i class="fas fa-hammer me-2"></i>Como exportar o projeto .zip
+              </h3>
+              <ol>
+                <li>Abra o projeto no <strong>Android Studio</strong></li>
+                <li>
+                  Clique em
+                  <strong>File → Export → Export to Zip File...</strong>
+                </li>
+                <li>Escolha o local para salvar o arquivo</li>
+                <li>Clique em <strong>OK</strong> para gerar o .zip</li>
+              </ol>
+            </div>
+            <div class="tech-tips mt-4">
+              <h4><i class="fas fa-graduation-cap me-2"></i>Dica Final</h4>
+              <p>
+                Preencha todas as imagens com o caminho correto nos
+                <code>src=""</code> antes de exportar para PDF. Use
+                <kbd>Ctrl + P</kbd> e selecione "Salvar como PDF".
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="page-number">16 / 16</div>
+      </div>
+    </main>
+
+    <footer class="footer no-print">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-0">© 2024 HamburgueriaZ - Projeto Android Studio</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <span
+              ><i class="fas fa-hamburger me-1"></i>Documentação do
+              Projeto</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal/Lightbox -->
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+      <div class="modal-close" onclick="closeModal()">
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="modal-nav">
+        <button onclick="prevImage(event)">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button onclick="nextImage(event)">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <img id="modalImage" src="" alt="Imagem ampliada" />
+      </div>
+    </div>
+
+    <div class="nav-buttons no-print">
+      <button class="btn-nav" onclick="window.print()">
+        <i class="fas fa-print"></i> Exportar PDF
+      </button>
+      <button class="btn-nav" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i> Topo
+      </button>
+    </div>
+
+    <script>
+      let allImages = [];
+      let currentModalIndex = 0;
+
+      function openModal(imgElement) {
+        const modal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+
+        allImages = Array.from(
+          document.querySelectorAll(".image-container-large img"),
+        );
+        currentModalIndex = allImages.indexOf(imgElement);
+
+        modalImage.src = imgElement.src;
+        modal.style.display = "block";
+      }
+
+      function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+      }
+
+      function prevImage(event) {
+        event.stopPropagation();
+        if (allImages.length > 0) {
+          currentModalIndex =
+            (currentModalIndex - 1 + allImages.length) % allImages.length;
+          const img = allImages[currentModalIndex];
+          document.getElementById("modalImage").src = img.src;
+        }
+      }
+
+      function nextImage(event) {
+        event.stopPropagation();
+        if (allImages.length > 0) {
+          currentModalIndex = (currentModalIndex + 1) % allImages.length;
+          const img = allImages[currentModalIndex];
+          document.getElementById("modalImage").src = img.src;
+        }
+      }
+
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/header.js"></script>
+  </body>
+</html>
