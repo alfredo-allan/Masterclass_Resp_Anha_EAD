@@ -18,8 +18,8 @@ html
 html
 
 <!-- CSS Custom do Projeto -->
-<link rel="stylesheet" href="/css/style.css" />
-<link rel="stylesheet" href="/css/header.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/header.css" />
 
 📦 Estrutura Base da Página
 html
@@ -41,8 +41,8 @@ html
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
     <!-- Header Fixo com Navegação -->
@@ -123,8 +123,8 @@ html
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/script.js"></script>
-    <script src="/js/header.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/header.js"></script>
 </body>
 </html>
 
@@ -369,9 +369,9 @@ Ações
 
     Incluir todas as CDNs (Bootstrap, Font Awesome, Anime.js)
 
-    Linkar /css/style.css e /css/header.css
+    Linkar css/style.css e css/header.css
 
-    Linkar /js/script.js e /js/header.js
+    Linkar js/script.js e js/header.js
 
     Usar a estrutura do header com navbar, brand-text, progress-container
 
