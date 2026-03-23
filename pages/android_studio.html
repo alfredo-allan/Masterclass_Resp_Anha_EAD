@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao Android Studio | Guia de Estudos Android - Trimestre</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <style>
+        .answer-box.correct{
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Header Fixo com Navegação -->
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-mobile-alt me-2"></i>
+                    <span class="brand-text">Introdução ao Android Studio</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#core-concepts">
+                                <i class="fas fa-brain me-1"></i>
+                                <span>Core Concepts</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#arquitetura">
+                                <i class="fas fa-code-branch me-1"></i>
+                                <span>Arquitetura</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#questoes">
+                                <i class="fas fa-question-circle me-1"></i>
+                                <span>Questões</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#faq">
+                                <i class="fas fa-lightbulb me-1"></i>
+                                <span>FAQ</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Barra de Progresso -->
+            <div class="progress-container">
+                <div class="progress-bar-custom"></div>
+                <div class="progress-glow"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h1 class="display-3 fw-bold mb-4">
+                            <span class="gradient-text">Introdução ao Android Studio:</span> Guia de Estudos Android
+                        </h1>
+                        <p class="lead text-gray mb-5">Domine os conceitos fundamentais do desenvolvimento Android com este guia completo baseado em documentação técnica atualizada para 2026.</p>
+                        <div class="hero-buttons">
+                            <a href="#core-concepts" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-rocket me-2"></i>Começar Estudo
+                            </a>
+                            <a href="#questoes" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-code-compare me-2"></i>Ver Questões
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Concepts -->
+        <section id="core-concepts" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-brain me-3"></i>
+                    Pontos de Fixação (Core Concepts)
+                </h2>
+                <p class="text-gray mb-5">Conceitos inegociáveis para dominar o desenvolvimento Android profissional.</p>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                                <h3>Android Studio (IDE)</h3>
+                                <p class="text-gray">Ambiente oficial da Google baseado no IntelliJ IDEA, integrando edição avançada, emulação e depuração.</p>
+                                <span class="badge bg-primary">IDE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class="fas fa-cubes fa-3x text-primary mb-3"></i>
+                                <h3>Gradle</h3>
+                                <p class="text-gray">Sistema essencial para gerenciamento de dependências e automação de builds (Retrofit, Glide).</p>
+                                <span class="badge bg-primary">Build</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class="fas fa-file-alt fa-3x text-primary mb-3"></i>
+                                <h3>AndroidManifest.xml</h3>
+                                <p class="text-gray">"Mapa" obrigatório do app que declara pacote, permissões, atividades e ponto de entrada.</p>
+                                <span class="badge bg-primary">Configuração</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                                <h3>Ciclo de Vida da Activity</h3>
+                                <p class="text-gray">Estados: onCreate, onStart, onResume, onPause, onStop, onDestroy para gerenciar recursos.</p>
+                                <span class="badge bg-primary">Lifecycle</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class="fas fa-folder-tree fa-3x text-primary mb-3"></i>
+                                <h3>Estrutura de Pastas</h3>
+                                <p class="text-gray">java/ (lógica), res/ (recursos visuais), scripts de build do Gradle.</p>
+                                <span class="badge bg-primary">Organização</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class="fas fa-exchange-alt fa-3x text-primary mb-3"></i>
+                                <h3>Intents</h3>
+                                <p class="text-gray">Mecanismo de navegação entre telas (explícitas) e integração com recursos do sistema (implícitas).</p>
+                                <span class="badge bg-primary">Comunicação</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Arquitetura e Estrutura -->
+<!-- Arquitetura e Estrutura -->
+<section id="arquitetura" class="section-padding bg-darker">
+    <div class="container">
+        <h2 class="section-title">
+            <i class="fas fa-code-branch me-3"></i>
+            Arquitetura e Estrutura de Arquivos
+        </h2>
+        <div class="row g-4 mb-5">
+            <div class="col-md-6">
+                <div class="comparison-card card h-100">
+                    <div class="card-header text-center">
+                        <i class="fas fa-database fa-2x mb-2"></i>
+                        <h3 class="mb-0">Shared Preferences</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle text-success"></i> Formato chave-valor</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Dados simples e pequenos volumes</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Configurações do app, login</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Simples implementação</li>
+                        </ul>
+                        <div class="example-box">
+                            <code>SharedPreferences prefs = getSharedPreferences("config", MODE_PRIVATE);<br>
+                            prefs.edit().putString("nome", "valor").apply();</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="comparison-card card h-100">
+                    <div class="card-header text-center">
+                        <i class="fas fa-table fa-2x mb-2"></i>
+                        <h3 class="mb-0">SQLite</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle text-success"></i> Banco relacional com tabelas</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Grandes volumes estruturados</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Dados complexos e relacionamentos</li>
+                            <li><i class="fas fa-check-circle text-success"></i> SQLiteOpenHelper</li>
+                        </ul>
+                        <div class="example-box">
+                            <code>db.execSQL("CREATE TABLE users (id INTEGER, name TEXT)");</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roteiro de Estudos - Timeline (ESTRUTURA CORRETA CONFORME CSS GLOBAL) -->
+        <h3 class="text-center mb-5">
+            <i class="fas fa-road me-2"></i>
+            Roteiro de Estudos - 4 Semanas
+        </h3>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="time-badge">1</div>
+                <h4>Fundamentos e Ambiente</h4>
+                <p>Instalação Android Studio + JDK + SDK, criação do primeiro projeto (Empty Activity), entendendo o AndroidManifest.xml.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="time-badge">2</div>
+                <h4>Interface e Layouts</h4>
+                <p>Layout Editor, Views (TextView, Button, EditText, ImageView), criação de interfaces responsivas.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="time-badge">3</div>
+                <h4>Navegação e Persistência</h4>
+                <p>Intents explícitas/implícitas, Shared Preferences, SQLite com SQLiteOpenHelper, CRUD.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="time-badge">4</div>
+                <h4>Depuração e Boas Práticas</h4>
+                <p>Logcat, MVVM, integração com Git, Retrofit, Glide e arquitetura escalável.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Questões de Estudo -->
+        <section id="questoes" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-graduation-cap me-3"></i>
+                    Questões para Prova
+                </h2>
+                <p class="text-gray mb-5">Questões abordadas no material de estudo com respostas detalhadas.</p>
+
+                <!-- Questão 1 -->
+                <div class="card mb-5 study-card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                                <div class="question-number">01</div>
+                                <span class="badge bg-primary mt-2">Intents</span>
+                            </div>
+                            <div class="col-md-9 col-lg-10">
+                                <h3 class="mb-3">Como funciona a navegação entre telas usando Intents explícitas?</h3>
+                                <div class="question-text mb-4">
+                                    <i class="fas fa-quote-left me-2 text-primary"></i>
+                                    Explique o mecanismo de navegação entre Activities utilizando Intents explícitas.
+                                </div>
+                                <div class="answer-box correct">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Resposta Correta:</strong> Intents explícitas especificam exatamente qual Activity deve ser iniciada, usando new Intent(this, DestinoActivity.class) e startActivity(). É necessário declarar a Activity no AndroidManifest.xml.
+                                </div>
+                                <div class="explanation-box mt-4">
+                                    <h4><i class="fas fa-lightbulb me-2"></i>Explicação</h4>
+                                    <p>A Intent explícita é utilizada para navegação interna, onde o desenvolvedor conhece a classe de destino. Exemplo prático:</p>
+                                    <pre><code>Intent intent = new Intent(this, SegundaActivity.class);
+startActivity(intent);</code></pre>
+                                    <div class="concept-tip mt-3">
+                                        <i class="fas fa-graduation-cap"></i>
+                                        <strong>Dica:</strong> Todas as Activities devem ser declaradas no AndroidManifest.xml com a tag &lt;activity&gt;.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Questão 2 -->
+                <div class="card mb-5 study-card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                                <div class="question-number">02</div>
+                                <span class="badge bg-primary mt-2">Persistência</span>
+                            </div>
+                            <div class="col-md-9 col-lg-10">
+                                <h3 class="mb-3">Quais as diferenças práticas entre Shared Preferences e SQLite?</h3>
+                                <div class="question-text mb-4">
+                                    <i class="fas fa-quote-left me-2 text-primary"></i>
+                                    Diferencie os dois mecanismos de persistência no Android.
+                                </div>
+                                <div class="answer-box correct">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Resposta Correta:</strong> Shared Preferences: chave-valor, dados simples e pequenos volumes. SQLite: banco relacional, grandes volumes estruturados e consultas complexas.
+                                </div>
+                                <div class="explanation-box mt-4">
+                                    <h4><i class="fas fa-lightbulb me-2"></i>Explicação</h4>
+                                    <p>Shared Preferences é ideal para configurações de usuário e status de login. SQLite é usado para dados estruturados como catálogos, pedidos, usando SQLiteOpenHelper para gerenciar conexões.</p>
+                                    <div class="concept-tip mt-3">
+                                        <i class="fas fa-graduation-cap"></i>
+                                        <strong>Dica:</strong> Para dados sensíveis, criptografe antes de salvar no Shared Preferences.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Questão 3 -->
+                <div class="card mb-5 study-card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                                <div class="question-number">03</div>
+                                <span class="badge bg-primary mt-2">Depuração</span>
+                            </div>
+                            <div class="col-md-9 col-lg-10">
+                                <h3 class="mb-3">Como o Logcat ajuda a identificar erros no ciclo de vida?</h3>
+                                <div class="question-text mb-4">
+                                    <i class="fas fa-quote-left me-2 text-primary"></i>
+                                    Explique o papel do Logcat no monitoramento do ciclo de vida das Activities.
+                                </div>
+                                <div class="answer-box correct">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Resposta Correta:</strong> Logcat permite monitorar transições de estado através de Log.d() nos métodos do ciclo de vida, identificando falhas e consumo excessivo de recursos.
+                                </div>
+                                <div class="explanation-box mt-4">
+                                    <h4><i class="fas fa-lightbulb me-2"></i>Explicação</h4>
+                                    <p>Inserindo logs em onCreate(), onStart(), onResume(), etc., o Logcat exibe o momento exato de cada execução. Se o app fecha, o último log indica onde ocorreu a falha.</p>
+                                    <div class="concept-tip mt-3">
+                                        <i class="fas fa-graduation-cap"></i>
+                                        <strong>Dica:</strong> Use Log.d("CicloVida", "onPause executado") para rastrear o fluxo da Activity.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Questão 4 -->
+                <div class="card mb-5 study-card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                                <div class="question-number">04</div>
+                                <span class="badge bg-primary mt-2">Intents</span>
+                            </div>
+                            <div class="col-md-9 col-lg-10">
+                                <h3 class="mb-3">Quais as diferenças entre Intents explícitas e implícitas?</h3>
+                                <div class="question-text mb-4">
+                                    <i class="fas fa-quote-left me-2 text-primary"></i>
+                                    Compare os dois tipos de Intent no Android.
+                                </div>
+                                <div class="answer-box correct">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Resposta Correta:</strong> Explícitas especificam componente exato (navegação interna). Implícitas definem ação genérica, delegando ao sistema a escolha do app compatível.
+                                </div>
+                                <div class="explanation-box mt-4">
+                                    <h4><i class="fas fa-lightbulb me-2"></i>Explicação</h4>
+                                    <p>Intent explícita: new Intent(this, Destino.class). Intent implícita: new Intent(Intent.ACTION_VIEW, Uri.parse("https://google.com")).</p>
+                                    <div class="concept-tip mt-3">
+                                        <i class="fas fa-graduation-cap"></i>
+                                        <strong>Dica:</strong> Para Intents implícitas, use <intent-filter> no manifesto para declarar quais ações sua Activity pode responder.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section-padding bg-darker">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-question-circle me-3"></i>
+                    Perguntas Frequentes
+                </h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="faq-card">
+                            <h4><i class="fas fa-code text-primary me-2"></i>Como as bibliotecas Retrofit e Glide facilitam o desenvolvimento?</h4>
+                            <p>Retrofit simplifica comunicação com APIs REST, enquanto Glide gerencia download, cache e exibição de imagens de forma eficiente. Ambas são incluídas via build.gradle.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="faq-card">
+                            <h4><i class="fas fa-tag text-primary me-2"></i>Explique a importância da tag intent-filter no AndroidManifest.</h4>
+                            <p>Define o ponto de entrada (LAUNCHER) do app e permite que componentes respondam a Intents implícitas. É essencial para o sistema saber como iniciar a aplicação.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="faq-card">
+                            <h4><i class="fas fa-mobile-alt text-primary me-2"></i>Caso de Uso: App de Ecoturismo (2026)</h4>
+                            <p>Desenvolvedor usa FusedLocationProviderClient com intervalos inteligentes, Foreground Service para rastreamento contínuo e monitora ciclo de vida via Logcat para otimizar bateria.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="faq-card">
+                            <h4><i class="fas fa-layer-group text-primary me-2"></i>O que é MVVM e por que usar?</h4>
+                            <p>Padrão de arquitetura Model-View-ViewModel que separa lógica de negócio da interface, facilitando testes e manutenção a longo prazo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2026 Introdução ao Android Studio - Guia de Estudos Android</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <span>🧙🏼 Desenvolvido por Alfredo Allan · Material para Provas do Trimestre</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Barra de progresso com scroll
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.progress-bar-custom').style.width = scrolled + '%';
+        });
+
+        // Animações com Anime.js
+        document.addEventListener('DOMContentLoaded', function() {
+            anime({
+                targets: '.card',
+                translateY: [20, 0],
+                opacity: [0, 1],
+                delay: anime.stagger(100),
+                duration: 800,
+                easing: 'easeOutCubic'
+            });
+
+            anime({
+                targets: '.section-title',
+                translateX: [-30, 0],
+                opacity: [0, 1],
+                duration: 600,
+                easing: 'easeOutCubic'
+            });
+        });
+
+        // Ativar link ativo no scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
